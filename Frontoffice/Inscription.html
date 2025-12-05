@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> 
+    <header>
 
-    <h1>Lagonjobs</h1>
+        <h1>Lagonjobs</h1>
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
         <a href="contact.html">Connexion</a>
-         <a href="connexion.html">Contact</a>
 
     </header>
 
     <main>
-        <h1>Connexion</h1>
+        
+        <h1> Inscription </h1>
 
-        <form action="">
+
+        <form action="connexion.html">
+
+            <label>Prénom</label><br>          
+            <input type="text" name="nom" required>
+
+            <br><br>
+
+            <label>Nom</label><br>
+            <input type="text" name="nom" required>
+
+            <br><br>
 
             <label>Email</label><br>          
             <input type="email" name="email" required>
@@ -30,20 +42,22 @@
             <input type="password" name="password" required>
 
             <br><br>
-            <button>Se connecter</button> <button>Créer un compte</button>
 
-            <p>Mot de passe oublié ?(fonctionnalité non implémentéé en HTML/CSS)</p>
+            <label>Confirmer le mot de passe</label><br>          
+            <input type="password" name="password" required>
 
+            <br><br>
+            <button type="submit">Créer mon compte</button> <button><a href="connexion.html">Déjà inscriit?</a></button>
+        
+            <br><br>   
         </form>
     </main>
 
-
     <footer>
-    <p> 2025 LagonJobs-Tous droits réservés</p> 
-    <p> Confidentialité Nous Concter</p>
+        <p>© 2025 Lagonjobs- Touts droits réservés</p>
+        <p>Confidentialité Nous contacter.</p>
     </footer>
 
 
-    
 </body>
 </html>
