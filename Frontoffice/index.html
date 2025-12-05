@@ -4,85 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="site-header header-inner logo">
 
-        <h1>Lagonjobs</h1>
-        <a href="index.html">Accueil</a>
-        <a href="offres.php">Offres</a>
-        <a href="connexion.html">Connexion</a>
-        <a href="inscription.html">Inscription</a>
+        <span><img src="Logo.png" alt="mon logo" class="wave"></span>
+        <h1><a href="index.html">Lagon</a>jobs</h1>
+        <nav class="nav">
+            <a href="index.html">Accueil</a>
+            <a href="offres.html">Offres</a>
+            <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
+            <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+        </nav>
+
 
     </header>
 
-    <main>
-        <h1>Trouver votre stage ou emploi facilement</h1>
-        <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
+    <main class="container hero" >
+        <div class="grid">
+            <section>
+                <h1>Trouver votre stage ou emploi facilement</h1>
+                <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
+                <form action="" class="form cards search-inline">
+                    <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
-        <section>
-            <h4>Pourquoi Lagonjobs ?</h4>
-            <ul>
-                <li>Annonces adaptées aux profils SIO</li>
-                <li>Interface simple et tojule</li>
-                <li>Back-office pour administrateurs</li>
-            </ul>
-            <p>Astuce_crées, un compte pour sauvegarder des offres</p>
-        </section>
+                    <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
+
+                    <select name="type_de_contrat" >
+                        <option value="0">Type de contrat</option>
+                        <option value="1">Stage</option>
+                        <option value="2">CDD</option>
+                        <option value="3">CDI</option>
+                    </select>
+
+                    <select name="type_de_contrat" >
+                        <option value="0">Télétravail</option>
+                        <option value="1">Hybride</option>
+                        <option value="2">Sur site</option>
+                    </select>
+
+                    <button type="submit" class="btn">Rechercher</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h4>Pourquoi Lagonjobs ?</h4>
+                <ul>
+                    <li>Annonces adaptées aux profils SIO</li>
+                    <li>Interface simple et tojule</li>
+                    <li>Back-office pour administrateurs</li>
+                </ul>
+                <p>Astuce_crées, un compte pour sauvegarder des offres</p>
+            </section>
+        </div>
+
 
         <!--Formulaire-->
 
-        <form action="">
-            <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
-            <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
-
-            <select name="type_de_contrat" >
-                <option value="0">Type de contrat</option>
-                <option value="1">Stage</option>
-                <option value="2">CDD</option>
-                <option value="3">CDI</option>
-            </select>
-
-            <select name="type_de_contrat" >
-                <option value="0">Télétravail</option>
-                <option value="1">Hybride</option>
-                <option value="2">Sur site</option>
-            </select>
-
-            <input type="submit" value="Rechercher">
-        </form>
 
         <hr>
 
         <h2>Dernières offres</h2>
 
-        <article>
-            <p>Stage</p>
-            <h3>Stagiaire Developpeur Web</h3>
-            <p>Mamoudzou - Hybride</p>
-            <p>Participer au développement et é-commerce.</p>
-        </article>
-        <button>Voir</button>
+        <section class="cards">
+            <article class="card ">
+                <p>Stage</p>
+                <h3>Stagiaire Developpeur Web</h3>
+                <p>Mamoudzou - Hybride</p>
+                <p>Participer au développement et é-commerce.</p>
+                <button class="btn btn-outline">Voir</button>
+            </article>
+            
 
-        <article>
-            <p>CDD</p>
-            <h3>Technicien support</h3>
-            <p>Dzaoudzi - Hybride</p>
-            <p>Assistance virtulle. Indication et Maintenance.</p>
-        </article>
+            <article class="card">
+                <p>CDD</p>
+                <h3>Technicien support</h3>
+                <p>Dzaoudzi - Hybride</p>
+                <p>Assistance virtulle. Indication et Maintenance.</p>
+                <button class="btn btn-outline">Voir</button>
+            </article>
 
-        <article>
-            <p>Stage</p>
-            <h3>Stagiaire Developpeur Web</h3>
-            <p>Mamoudzou - Hybride</p>
-            <p>Participer au développement et é-commerce.</p>
-        </article>
+            <article class="card">
+                <p>Stage</p>
+                <h3>Stagiaire Developpeur Web</h3>
+                <p>Mamoudzou - Hybride</p>
+                <p>Participer au développement et é-commerce.</p>
+                <button class="btn btn-outline">Voir</button>
+            </article>
+        </section>
+        
     </main>
 
-    <footer>
-        <p>© 2025 Lagonjobs- Touts droits réservés</p>
-        <p>Confidentialité Nous contacter.</p>
+    <footer class="site-footer footer-inner">
+        <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
+        <a href="contact.html">Confidentialité Nous contacter.</a>
     </footer>
     
 </body>

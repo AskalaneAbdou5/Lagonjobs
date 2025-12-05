@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+</head>
+<body>
+
+    <header>
+        <h1>Lagonjobs</h1>
+        <a href="gestion_offre.html">Accueil</a>
+        <a href="offres.php">Offres</a>
+
+    </header>
+
+    <main>
+        <h1>Gestion des emploies</h1>
+
+        <form action="">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre">
+
+            <label for="status">Status</label>
+            <select name="status" >
+                <option value="0">Brouillon</option>
+                <option value="1">Publiée</option>
+            </select>
+
+            <label for="categorie">Catégorie</label>
+            <select name="categorie" >
+                <option value="0">Catégorie</option>
+                <option value="1">Stage</option>
+                <option value="2">CDD</option>
+                <option value="3">CDI</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea name="description" ></textarea>
+
+            <input type="submit" value="Ajouter">
+            <input type="submit" value="Filtrer">
+            <input type="submit" value="Reinitialiser">
+
+        </form>
+
+        <table border="2px">
+            <tr>
+                <th>Titre</th>
+                <th>Statut</th>
+                <th>Catégorie</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>Technicien et Maintenance</td>
+                <td>Publiée</td>
+                <td>CDD</td>
+                <td>C'est un emploie qui te forme</td>
+                <td><button>Modifier</button> <button>Supprimer</button></td>
+            </tr>
+
+            
+        </table>
+    </main>
+
+    <footer>
+        <p>© 2025 Lagonjobs- Touts droits réservés</p>
+        <p>Confidentialité Nous contacter.</p>
+    </footer>
+
+    
+
+    
+</body>
+</html>
