@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offres</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
   <!--en-tête-->
-  <header>
+  <header class="site-header header-inner">
 
-    <h1>Lagonjobs</h1>
-    <a href="index.html">Accueil</a>
-    <a href="offres.html">Offres</a>
-    <a href="connexion.html">Connexion</a>
-    <a href="inscription.html">Inscription</a>
+
+    <h1><a href="index.html">Lagonjobs</a></h1>
+    <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres</a>
+        <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
+        <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+    </nav>
 
   </header>
 
 
 
-  <main>
+  <main class="container hero">
     <h1>Offres d'emploi & stages</h1>
 
     <!--Formilaire de filtrage-->
-    <article>
+    <article class="search-inline">
       <form action="offres.html" method="POST">
           <label for="motclé"></label>
           <input type="text" name="motcle" placeholder="Mot-clé">
@@ -47,12 +51,12 @@
           <input type="submit" value="Filtrer">
           <input type="submit" value="Réinitialiser">
       </form>
-    </article>
+    </article><br>
 
 
 
     <!--Offres d'emploi et stages-->
-    <article>
+    <article class="card">
       <p>Stage</p>
       <h2>Stagiaire Dévelopeur Web</h2>
       <p>Mamoudzou-Hybride</p>
@@ -60,7 +64,7 @@
       <input type="submit" value="Dêtail">
     </article><br>
 
-    <article>
+    <article class="card">
       <p>CDD</p>
       <h2>Technicien support</h2>
       <p>Dzaoudzi - Sur site</p>
@@ -68,7 +72,7 @@
       <input type="submit" value="Dêtail">
     </article><br>
 
-    <article>
+    <article class="card">
       <p>CDD</p>
       <h2>Admin systémes junior</h2>
       <p>DKoungou - Hybride</p>
@@ -85,9 +89,9 @@
 
 
 
-  <footer>
-    <p>© 2025 Lagonjobs- Touts droits réservés</p>
-    <p>Confidentialité Nous contacter.</p>
+  <footer class="site-footer footer-inner">
+    <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
+    <a href="contact.html">Confidentialité Nous contacter.</a>
   </footer>
     
 </body>

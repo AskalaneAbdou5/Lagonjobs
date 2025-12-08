@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
-    <header>
+    <header class="site-header header-inner">
 
-        <h1>Lagonjobs</h1>
+
+    <h1><a href="index.html">Lagonjobs</a></h1>
+    <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
-        <a href="connexion.html">Connexion</a>
-        <a href="inscription.html">Inscription</a>
+        <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
+        <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+    </nav>
 
-    </header>
+  </header>
 
     <!--Formullaire-->
     <h1>Contact</h1>
     <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
-    <form action="contact.html" method="POST">
+    <section>
+      <form action="contact.html" method="POST">
         <label for="nom">Nom</label>
         <input type="text" name="nom" required>
 
@@ -37,11 +42,14 @@
         <input type="submit" value="Envoyez">
         <input type="submit" value="Effacer">
 
-    </form><br>
-    <footer>
-        <p>© 2025 Lagonjobs- Touts droits réservés</p>
-        <p>Confidentialité Nous contacter.</p>
-    </footer>
+      </form><br>
+
+    </section>
+
+    <footer class="site-footer footer-inner">
+    <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
+    <a href="contact.html">Confidentialité Nous contacter.</a>
+  </footer>
 
     
 
