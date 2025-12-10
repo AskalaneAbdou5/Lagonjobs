@@ -16,17 +16,20 @@
     <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
+        <a href="contact.html">Contact</a>
         <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
         <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
     </nav>
 
   </header>
 
+  <main class="center hero">
+    
     <!--Formullaire-->
     <h1>Contact</h1>
     <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
-    <section>
-      <form action="contact.html" method="POST">
+
+      <form action="contact.html" method="POST" class="form row auth-card">
         <label for="nom">Nom</label>
         <input type="text" name="nom" required>
 
@@ -37,19 +40,22 @@
         <input type="text" name="suje" required>
 
         <label for="message">Message</label>
-        <input type="text" name="message" required>
+        <textarea name="message" id=""></textarea>
 
-        <input class="btn-outline" type="submit" value="Envoyez">
-        <input class="btn-outline" type="submit" value="Effacer">
+        <button type="submit" class="btn">Envoyez</button>
+        <button type="reset" class="btn btn-outline">Effacer</button>
 
       </form><br>
 
-    </section>
 
-    <footer class="site-footer footer-inner">
+  </main>
+
+  <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
     <a href="contact.html">Confidentialité Nous contacter.</a>
   </footer>
+
+
 
     
 
