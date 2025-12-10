@@ -14,80 +14,85 @@
             <a href="index.html">Accueil</a>
             <a href="offres.html">Offres</a>
             <a href="contact.html">Contact</a>
-            <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
-            <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+            <a href="connexion.html" class="btn btn-outline">Connexion</a>
+            <a href="inscription.html" class="btn btn-outline">Inscription</a>
         </nav>
 
 
     </header>
 
-    <main class="container hero" >
-        <div class="grid">
-            <section>
-                <h1>Trouver votre stage ou emploi facilement</h1>
-                <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
-                <form action="offres.html" class="form cards search-inline">
-                    <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
+    <main >
+        <section class="hero">
+            <div class="container grid">
+                <section>
+                    <h1>Trouver votre stage ou emploi facilement</h1>
+                    <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
+                    <form action="offres.html" class="form cards search-inline">
+                        <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
-                    <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
+                        <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
 
-                    <select name="type_de_contrat" >
-                        <option value="0">Type de contrat</option>
-                        <option value="1">Stage</option>
-                        <option value="2">CDD</option>
-                        <option value="3">CDI</option>
-                    </select>
+                        <select name="type_de_contrat" >
+                            <option value="0">Type de contrat</option>
+                            <option value="1">Stage</option>
+                            <option value="2">CDD</option>
+                            <option value="3">CDI</option>
+                        </select>
 
-                    <select name="type_de_contrat" >
-                        <option value="0">Télétravail</option>
-                        <option value="1">Hybride</option>
-                        <option value="2">Sur site</option>
-                    </select>
+                        <select name="type_de_contrat" >
+                            <option value="0">Télétravail</option>
+                            <option value="1">Hybride</option>
+                            <option value="2">Sur site</option>
+                        </select>
 
-                    <button type="submit" class="btn">Rechercher</button>
-                </form>
-            </section>
+                        <button type="submit" class="btn">Rechercher</button>
+                    </form>
+                </section>
 
-            <section class="card">
-                <h4>Pourquoi Lagonjobs ?</h4>
-                <ul>
-                    <li>Annonces adaptées aux profils SIO</li>
-                    <li>Interface simple et tojule</li>
-                    <li>Back-office pour administrateurs</li>
-                </ul>
-                <p>Astuce_crées, un compte pour sauvegarder des offres</p>
-            </section>
-        </div>
+                <section class="card">
+                    <h4>Pourquoi Lagonjobs ?</h4>
+                    <ul>
+                        <li>Annonces adaptées aux profils SIO</li>
+                        <li>Interface simple et tojule</li>
+                        <li>Back-office pour administrateurs</li>
+                    </ul>
+                    <p>Astuce_crées, un compte pour sauvegarder des offres</p>
+                </section>
+            </div>
+        </section>
 
-        <hr>
+        <hr class="container">
 
-        <h2>Dernières offres</h2>
+        <section class="section container">
 
-        <section class="cards">
-            <article class="card ">
-                <p>Stage</p>
-                <h3>Stagiaire Developpeur Web</h3>
-                <p>Mamoudzou - Hybride</p>
-                <p>Participer au développement et é-commerce.</p>
-                <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
-            </article>
-            
+            <h2>Dernières offres</h2>
 
-            <article class="card">
-                <p>CDD</p>
-                <h3>Technicien support</h3>
-                <p>Dzaoudzi - Hybride</p>
-                <p>Assistance virtulle. Indication et Maintenance.</p>
-                <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
-            </article>
+            <div class="cards">
+                <article class="card ">
+                    <p>Stage</p>
+                    <h3>Stagiaire Developpeur Web</h3>
+                    <p>Mamoudzou - Hybride</p>
+                    <p>Participer au développement et é-commerce.</p>
+                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                </article>
+                
 
-            <article class="card">
-                <p>Stage</p>
-                <h3>Stagiaire Developpeur Web</h3>
-                <p>Mamoudzou - Hybride</p>
-                <p>Participer au développement et é-commerce.</p>
-                <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
-            </article>
+                <article class="card">
+                    <p>CDD</p>
+                    <h3>Technicien support</h3>
+                    <p>Dzaoudzi - Hybride</p>
+                    <p>Assistance virtulle. Indication et Maintenance.</p>
+                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                </article>
+
+                <article class="card">
+                    <p>Stage</p>
+                    <h3>Stagiaire Developpeur Web</h3>
+                    <p>Mamoudzou - Hybride</p>
+                    <p>Participer au développement et é-commerce.</p>
+                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                </article>
+            </div>
         </section>
         
     </main>
