@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
-<body>
+<body class="body">
 
-    <header>
-        <h1>Lagonjobs</h1>
-        <a href="gestion_offre.html">Accueil</a>
-        <a href="offres.php">Offres</a>
+    <header class="site-header header-inner">
 
-    </header>
 
-    <main>
-        <h1>Gestion des emploies</h1>
+    <h1><a href="gestion_offre.html">Lagon</a>jobs</h1>
+    <nav class="nav">
+        <a href="gestion_offre.html">Tableau de bord</a>
+        <a href="">Utilisateur</a>
+    </nav>
 
-        <form action="">
+  </header>
+
+    <main class="container">
+        <h1>Gestion des emploies</h1><br>
+
+        <form action="" class="form">
             <label for="titre">Titre</label>
             <input type="text" name="titre">
 
@@ -39,11 +44,11 @@
             <label for="description">Description</label>
             <textarea name="description" ></textarea>
 
-            <input type="submit" value="Ajouter">
-            <input type="submit" value="Filtrer">
-            <input type="submit" value="Reinitialiser">
+            <button class="btn btn-outline" >Ajouter</button>
+            <button class="btn btn-outline" >Filtrer</button>
+            <button class="btn btn-outline" >Reinitialiser</button>
 
-        </form>
+        </form><br>
 
         <table border="2px">
             <tr>
@@ -59,17 +64,16 @@
                 <td>Publiée</td>
                 <td>CDD</td>
                 <td>C'est un emploie qui te forme</td>
-                <td><button>Modifier</button> <button>Supprimer</button></td>
+                <td><button class="btn btn-outline">Modifier</button> <button class="btn btn-outline">Supprimer</button></td>
             </tr>
 
             
         </table>
     </main>
 
-    <footer>
-        <p>© 2025 Lagonjobs- Touts droits réservés</p>
-        <p>Confidentialité Nous contacter.</p>
-    </footer>
+    <footer class="site-footer footer-inner">
+    <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
+  </footer>
 
     
 
