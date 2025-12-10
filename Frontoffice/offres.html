@@ -18,75 +18,72 @@
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
         <a href="contact.html">Contact</a>
-        <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
-        <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+        <a href="connexion.html" class="btn btn-outline">Connexion</a>
+        <a href="inscription.html" class="btn btn-outline">Inscription</a>
     </nav>
 
   </header>
 
 
 
-  <main class="container hero">
-    <h1>Offres d'emploi & stages</h1>
+  <main class="hero">
+    <div class="container">
+      <h1>Offres d'emploi & stages</h1>
 
-    <!--Formilaire de filtrage-->
-      <form action="offres.html" method="POST" class="form cards search-inline">
-          <input type="text" name="motcle" placeholder="Mot-clé">
-          <select>
-            <option value="type">Type</option>
-            <option value="type">Type</option>
-            <option value="type">Type</option>
-          </select>
-          <select>
-            <option value="ville">Ville</option>
-            <option value="ville">Ville</option>
-            <option value="ville">Ville</option>
-          </select>
-          <select>
-            <option value="teletravail">Telétravail</option>
-            <option value="teletravail">Telétravail</option>
-            <option value="teletravail">Telétravail</option>
-          </select>
-          <button type="submit" class="btn">Filtrer</button>
-          <input class="btn-outline" type="submit" value="Réinitialiser">
-      </form> <br>
+      <!--Formilaire de filtrage-->
+        <form action="offres.html" method="POST" class="form cards search-inline">
+            <input type="text" name="motcle" placeholder="Mot-clé">
+            <select>
+              <option value="type">Type</option>
+              <option value="type">Type</option>
+              <option value="type">Type</option>
+            </select>
+            <select>
+              <option value="ville">Ville</option>
+              <option value="ville">Ville</option>
+              <option value="ville">Ville</option>
+            </select>
+            <select>
+              <option value="teletravail">Telétravail</option>
+              <option value="teletravail">Telétravail</option>
+              <option value="teletravail">Telétravail</option>
+            </select>
+            <button type="submit" class="btn">Filtrer</button>
+            <input class="btn-outline" type="submit" value="Réinitialiser">
+        </form> <br>
 
+      <hr>
+      <br>
 
+      <!--Offres d'emploi et stages-->
+      <section class="cards">
+        <article class="card">
+          <p>Stage</p>
+          <h2>Stagiaire Dévelopeur Web</h2>
+          <p>Mamoudzou-Hybride</p>
+          <p>Participer au développement des sites vitrine et e-commerce.</p>
+          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+        </article>
 
-    <!--Offres d'emploi et stages-->
-    <section class="cards">
-      <article class="card">
-        <p>Stage</p>
-        <h2>Stagiaire Dévelopeur Web</h2>
-        <p>Mamoudzou-Hybride</p>
-        <p>Participer au développement des sites vitrine et e-commerce.</p>
-        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
-      </article>
+        <article class="card">
+          <p>CDD</p>
+          <h2>Technicien support</h2>
+          <p>Dzaoudzi - Sur site</p>
+          <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
+          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+        </article>
 
-      <article class="card">
-        <p>CDD</p>
-        <h2>Technicien support</h2>
-        <p>Dzaoudzi - Sur site</p>
-        <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
-        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
-      </article>
-
-      <article class="card">
-        <p>CDD</p>
-        <h2>Admin systémes junior</h2>
-        <p>DKoungou - Hybride</p>
-        <p>Administration Linux/Windows, sauvegardes et supervision.</p>
-        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
-      </article>
-    </section>
+        <article class="card">
+          <p>CDD</p>
+          <h2>Admin systémes junior</h2>
+          <p>DKoungou - Hybride</p>
+          <p>Administration Linux/Windows, sauvegardes et supervision.</p>
+          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+        </article>
+      </section>
+    </div>
 
   </main>
-
-
-
-
-
-
 
 
   <footer class="site-footer footer-inner">
