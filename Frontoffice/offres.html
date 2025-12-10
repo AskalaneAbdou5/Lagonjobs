@@ -13,7 +13,7 @@
   <header class="site-header header-inner">
 
 
-    <h1><a href="index.html">Lagonjobs</a></h1>
+    <h1><a href="index.html">Lagon</a>jobs</h1>
     <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres</a>
@@ -29,9 +29,7 @@
     <h1>Offres d'emploi & stages</h1>
 
     <!--Formilaire de filtrage-->
-    <article class="search-inline">
-      <form action="offres.html" method="POST">
-          <label for="motclé"></label>
+      <form action="offres.html" method="POST" class="form cards search-inline">
           <input type="text" name="motcle" placeholder="Mot-clé">
           <select>
             <option value="type">Type</option>
@@ -48,37 +46,38 @@
             <option value="teletravail">Telétravail</option>
             <option value="teletravail">Telétravail</option>
           </select>
-          <input class="btn-outline" type="submit" value="Filtrer">
+          <button type="submit" class="btn">Filtrer</button>
           <input class="btn-outline" type="submit" value="Réinitialiser">
-      </form>
-    </article><br>
+      </form> <br>
 
 
 
     <!--Offres d'emploi et stages-->
-    <article class="card">
-      <p>Stage</p>
-      <h2>Stagiaire Dévelopeur Web</h2>
-      <p>Mamoudzou-Hybride</p>
-      <p>Participer au développement des sites vitrine et e-commerce.</p>
-      <input class="btn" type="submit" value="Dêtail">
-    </article><br>
+    <section class="cards">
+      <article class="card">
+        <p>Stage</p>
+        <h2>Stagiaire Dévelopeur Web</h2>
+        <p>Mamoudzou-Hybride</p>
+        <p>Participer au développement des sites vitrine et e-commerce.</p>
+        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
+      </article>
 
-    <article class="card">
-      <p>CDD</p>
-      <h2>Technicien support</h2>
-      <p>Dzaoudzi - Sur site</p>
-      <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
-      <input class="btn" type="submit" value="Dêtail">
-    </article><br>
+      <article class="card">
+        <p>CDD</p>
+        <h2>Technicien support</h2>
+        <p>Dzaoudzi - Sur site</p>
+        <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
+        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
+      </article>
 
-    <article class="card">
-      <p>CDD</p>
-      <h2>Admin systémes junior</h2>
-      <p>DKoungou - Hybride</p>
-      <p>Administration Linux/Windows, sauvegardes et supervision.</p>
-      <input class="btn" type="submit" value="Dêtail">
-    </article><br>
+      <article class="card">
+        <p>CDD</p>
+        <h2>Admin systémes junior</h2>
+        <p>DKoungou - Hybride</p>
+        <p>Administration Linux/Windows, sauvegardes et supervision.</p>
+        <button type="submit" class="btn"><a href="details_offres.html">Dêtail</a></button>
+      </article>
+    </section>
 
   </main>
 
