@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 03 déc. 2025 à 11:31
+-- Généré le : jeu. 11 déc. 2025 à 09:34
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -24,29 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Structure de la table `roles`
 --
 
-CREATE TABLE `administrateur` (
+CREATE TABLE `roles` (
   `Id` int(11) NOT NULL,
-  `Nom` varchar(20) NOT NULL,
-  `Prenom` varchar(20) NOT NULL,
-  `Email` varchar(20) NOT NULL,
-  `Mot_de_passe` int(11) NOT NULL
+  `Role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Structure de la table `utilisateurs`
 --
 
-CREATE TABLE `utilisateur` (
+CREATE TABLE `utilisateurs` (
   `Id` int(11) NOT NULL,
   `Nom` varchar(20) NOT NULL,
   `Prenom` varchar(20) NOT NULL,
   `Email` varchar(20) NOT NULL,
-  `Mot_de_passe` int(11) NOT NULL
+  `Mot_de_passe` int(11) NOT NULL,
+  `Id_Role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -54,15 +52,15 @@ CREATE TABLE `utilisateur` (
 --
 
 --
--- Index pour la table `administrateur`
+-- Index pour la table `roles`
 --
-ALTER TABLE `administrateur`
+ALTER TABLE `roles`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `utilisateur`
+-- Index pour la table `utilisateurs`
 --
-ALTER TABLE `utilisateur`
+ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -70,15 +68,15 @@ ALTER TABLE `utilisateur`
 --
 
 --
--- AUTO_INCREMENT pour la table `administrateur`
+-- AUTO_INCREMENT pour la table `roles`
 --
-ALTER TABLE `administrateur`
+ALTER TABLE `roles`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `utilisateur`
+-- AUTO_INCREMENT pour la table `utilisateurs`
 --
-ALTER TABLE `utilisateur`
+ALTER TABLE `utilisateurs`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
