@@ -97,7 +97,7 @@ a:hover{color:var(--lagon)}
 .form .row{display:grid; grid-template-columns:1fr 1fr; gap:clamp(12px, 2.2vw, 18px)}
 .form label{font-weight:600; display:block; margin-bottom:.35rem}
 .form input, .form select, .form textarea{
-  width:100%; padding:.8rem .9rem; border:1px solid #dbe5ea; border-radius:10px; background:#fff;
+  width:100%; padding:.8rem .9rem; border:1px solid #8a9191; border-radius:10px; background:#fff;
 }
 .form textarea{min-height:140px; resize:vertical}
 .form .actions{margin-top:12px}
