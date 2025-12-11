@@ -25,18 +25,26 @@
 
         <form action="Inscription.html" class="form row auth-card">
 
-            <label>Email</label><br>          
-            <input type="email" name="email" required>
+            <div class="stack">
+                <div class="stack">
+                    <div>
+                        <label>Email</label>         
+                        <input type="email" name="email" required>
+                    </div>
 
-            <br><br>
+                    <div>
+                        <label>Mot de passe</label>         
+                        <input type="password" name="password" required>
+                    </div>
+                </div>
+                
+                <a href="connexion.html">Mot de passe oublié ?</a>
 
-            <label>Mot De Passe</label><br>          
-            <input type="password" name="password" required>
-            <a href="connexion.html">Mot de passe oublié ?</a>
-
-            <br><br>
-            <button type="submit" class="btn btn-outline">Se connecter</button> 
-            <a href="Inscription.html" class="btn">Créer un compte</a>
+                <div class="action">
+                    <button type="submit" class="btn btn-outline">Se connecter</button> 
+                    <a href="Inscription.html" class="btn">Créer un compte</a>
+                </div>
+            </div>
 
 
         </form>
