@@ -26,24 +26,43 @@
   <main >
     
     <!--Formullaire-->
-    <h1>Contact</h1>
-    <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
+    <div style="padding-left: 2rem;">
+      <h1>Contact</h1>
+      <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
+    </div>
 
-      <form action="contact.html" method="POST" class="form row">
-        <label for="nom">Nom</label>
-        <input type="text" name="nom" required>
+      <form action="contact.html" method="POST" class="form">
+        
+        <div class="stack">
+          <div class="row">
+            <div>
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" required>
+            </div>
 
-        <label for="email">Email</label>
-        <input type="text" name="email" required>
+            <div>
+              <label for="email">Email</label>
+              <input type="text" name="email" required>
+            </div>
+          </div>
 
-        <label for="sujet">Sujet</label>
-        <input type="text" name="suje" required>
+          <div class="stack">
+            <div>
+              <label for="sujet">Sujet</label>
+              <input type="text" name="suje" required>
+            </div>
 
-        <label for="message">Message</label>
-        <textarea name="message" id=""></textarea>
+            <div>
+              <label for="message">Message</label>
+              <textarea name="message" id=""></textarea>
+            </div>
+          </div>
 
-        <button type="submit" class="btn">Envoyez</button>
-        <button type="reset" class="btn btn-outline">Effacer</button>
+          <div class="action">
+            <button type="submit" class="btn">Envoyez</button>
+            <button type="reset" class="btn btn-outline">Effacer</button>
+          </div>
+        </div>
 
       </form><br>
 
