@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 03 déc. 2025 à 11:31
+-- Généré le : sam. 13 déc. 2025 à 14:17
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -38,6 +38,19 @@ CREATE TABLE `administrateur` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `offres`
+--
+
+CREATE TABLE `offres` (
+  `Id` int(11) NOT NULL,
+  `Type_de_contrat` varchar(10) NOT NULL,
+  `Ville` varchar(20) NOT NULL,
+  `Teletravail` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateur`
 --
 
@@ -60,6 +73,12 @@ ALTER TABLE `administrateur`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Index pour la table `offres`
+--
+ALTER TABLE `offres`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
@@ -73,6 +92,12 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `offres`
+--
+ALTER TABLE `offres`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
