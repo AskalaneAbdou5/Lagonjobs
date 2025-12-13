@@ -1,3 +1,34 @@
+<?php
+
+try{
+    $mysqlClient = new PDO('mysql:host=localhost;dbname=lagonjobs;charset=utf8', 'root', '');
+    $mysqlClient->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (Exception $e){
+    die('Erreur de connexion à la base de données : ' . $e->getMessage());
+}
+echo "connecter à la base de donnée";
+
+
+$sql_requete = 'SELECT * FROM offres';
+$sql = $mysqlClient->prepare($sql_requete);
+$sql->execute();
+$sql_resultat = $sql->fetchAll();
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +47,7 @@
     <h1><a href="index.html">Lagon</a>jobs</h1>
     <nav class="nav">
         <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
+        <a href="offres.php">Offres</a>
         <a href="contact.html">Contact</a>
         <a href="connexion.html" class="btn btn-outline">Connexion</a>
         <a href="inscription.html" class="btn btn-outline">Inscription</a>
@@ -31,23 +62,26 @@
       <h1>Offres d'emploi & stages</h1>
 
       <!--Formilaire de filtrage-->
-        <form action="offres.html" method="POST" class="form cards search-inline">
+        <form action="offres.php" method="POST" class="form cards search-inline">
             <input type="text" name="motcle" placeholder="Mot-clé">
-            <select>
-              <option value="type">Type</option>
-              <option value="type">Type</option>
-              <option value="type">Type</option>
+            
+            <select name="type_de_contrat" >
+              <option value="0">Stage</option>
+              <option value="1">CDD</option>
+              <option value="2">CDI</option>
             </select>
-            <select>
-              <option value="ville">Ville</option>
-              <option value="ville">Ville</option>
-              <option value="ville">Ville</option>
+
+            <select name="ville" >
+              <option value="0">Mamoudzou</option>
+              <option value="1">Dzaoudzi</option>
+              <option value="2">Koungou</option>
             </select>
-            <select>
-              <option value="teletravail">Telétravail</option>
-              <option value="teletravail">Telétravail</option>
-              <option value="teletravail">Telétravail</option>
+
+            <select name="Télétravail" >
+              <option value="0">Hybride</option>
+              <option value="1">Sur site</option>
             </select>
+
             <button type="submit" class="btn">Filtrer</button>
             <input class="btn-outline" type="submit" value="Réinitialiser">
         </form> <br>
@@ -76,7 +110,7 @@
         <article class="card">
           <p>CDD</p>
           <h2>Admin systémes junior</h2>
-          <p>DKoungou - Hybride</p>
+          <p>Koungou - Hybride</p>
           <p>Administration Linux/Windows, sauvegardes et supervision.</p>
           <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
         </article>
