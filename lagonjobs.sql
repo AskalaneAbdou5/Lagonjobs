@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 13 déc. 2025 à 14:17
+-- Généré le : mar. 16 déc. 2025 à 13:41
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -44,8 +44,10 @@ CREATE TABLE `administrateur` (
 CREATE TABLE `offres` (
   `Id` int(11) NOT NULL,
   `Type_de_contrat` varchar(10) NOT NULL,
+  `Titre` varchar(50) NOT NULL,
   `Ville` varchar(20) NOT NULL,
-  `Teletravail` varchar(20) NOT NULL
+  `Teletravail` varchar(20) NOT NULL,
+  `Description` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

@@ -1,3 +1,10 @@
+<?php
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+$lesOffres = RecupererLesOffres();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

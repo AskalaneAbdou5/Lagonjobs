@@ -65,31 +65,34 @@ $lesOffres = RecupererLesOffres();
       <hr>
       <br>
 
+
+
       <!--Offres d'emploi et stages-->
       <section class="cards">
+
+        <?php
+        if (empty($lesOffres)) {
+          echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
+        } else {
+          foreach ($lesOffres as $offre) {
+        ?>
+        
         <article class="card">
-          <p>Stage</p>
-          <h2>Stagiaire Dévelopeur Web</h2>
-          <p>Mamoudzou-Hybride</p>
-          <p>Participer au développement des sites vitrine et e-commerce.</p>
-          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
+          <p><?= ($offre['Type_de_contrat']); ?></p> 
+                
+          <h2><?= ($offre['Titre']); ?></h2>
+                
+          <p><?= ($offre['Ville']); ?></p>
+                
+          <p><?= ($offre['Description']); ?></p>
+                
         </article>
 
-        <article class="card">
-          <p>CDD</p>
-          <h2>Technicien support</h2>
-          <p>Dzaoudzi - Sur site</p>
-          <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
-          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
-        </article>
+        <?php 
+          }
+        } 
+        ?>
 
-        <article class="card">
-          <p>CDD</p>
-          <h2>Admin systémes junior</h2>
-          <p>Koungou - Hybride</p>
-          <p>Administration Linux/Windows, sauvegardes et supervision.</p>
-          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
-        </article>
       </section>
     </div>
 
