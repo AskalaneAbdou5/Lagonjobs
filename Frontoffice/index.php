@@ -1,3 +1,10 @@
+<?php
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+$lesOffres = RecupererLesOffres();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +17,13 @@
 <body>
     <header class="site-header header-inner">
 
-        <span class="logo"><a href="index.html">Lagon</a>jobs</span>
+        <h1><a href="index.php">Lagon</a>jobs</h1>
         <nav class="nav">
-            <a href="index.html">Accueil</a>
-            <a href="offres.html">Offres</a>
-            <a href="contact.html">Contact</a>
-            <a href="connexion.html" class="btn btn-outline">Connexion</a>
-            <a href="inscription.html" class="btn btn-outline">Inscription</a>
+            <a href="index.php">Accueil</a>
+            <a href="offres.php">Offres</a>
+            <a href="contact.php">Contact</a>
+            <a href="connexion.php" class="btn btn-outline">Connexion</a>
+            <a href="inscription.php" class="btn btn-outline">Inscription</a>
         </nav>
 
 
@@ -28,7 +35,7 @@
                 <section>
                     <h1>Trouver votre stage ou emploi facilement</h1>
                     <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
-                    <form action="offres.html" class="form cards search-inline">
+                    <form action="offres.php" class="form cards search-inline">
                         <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
                         <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
@@ -99,7 +106,7 @@
 
     <footer class="site-footer footer-inner">
         <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-        <a href="contact.html">Confidentialité Nous contacter.</a>
+        <a href="contact.php">Confidentialité Nous contacter.</a>
     </footer>
     
 </body>

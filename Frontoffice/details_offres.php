@@ -1,3 +1,9 @@
+<?php
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +19,19 @@
 
     <span class="logo"><a href="index.html">Lagon</a>jobs</span>
     <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-        <a href="connexion.html" class="btn btn-outline">Connexion</a>
-        <a href="inscription.html" class="btn btn-outline">Inscription</a>
+        <a href="index.php">Accueil</a>
+        <a href="offres.php">Offres</a>
+        <a href="contact.php">Contact</a>
+        <a href="connexion.php" class="btn btn-outline">Connexion</a>
+        <a href="inscription.php" class="btn btn-outline">Inscription</a>
     </nav>
 
   </header>
 
 
-    <main class="container hero">
+    <main class="container">
 
-        <a href="offres.html">Retour aux offres</a>
+        <a href="offres.php">Retour aux offres</a>
 
         <br>
         <br>
@@ -42,7 +48,7 @@
 
             <P><b>Profil :</b> motivation, bases HTML/CSS/JS,notions de PHP bienvenues.</P>
             <button class="btn"><a href="">Postuler</a></button>
-            <button class="btn btn-outline"><a href="offres.html">Voir d'autres offres</a></button>
+            <button class="btn btn-outline"><a href="offres.php">Voir d'autres offres</a></button>
 
         </article>
 
@@ -52,7 +58,7 @@
 
     <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-    <a href="contact.html">Confidentialité Nous contacter.</a>
+    <a href="contact.php">Confidentialité Nous contacter.</a>
   </footer>
     
 </body>

@@ -1,3 +1,9 @@
+<?php
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +20,11 @@
 
     <span class="logo"><a href="index.html">Lagon</a>jobs</span>
     <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-        <a href="connexion.html" class="btn btn-outline">Connexion</a>
-        <a href="inscription.html" class="btn btn-outline">Inscription</a>
+        <a href="index.php">Accueil</a>
+        <a href="offres.php">Offres</a>
+        <a href="contact.php">Contact</a>
+        <a href="connexion.php" class="btn btn-outline">Connexion</a>
+        <a href="inscription.php" class="btn btn-outline">Inscription</a>
     </nav>
 
   </header>
@@ -71,7 +77,7 @@
 
   <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-    <a href="contact.html">Confidentialité Nous contacter.</a>
+    <a href="contact.php">Confidentialité Nous contacter.</a>
   </footer>
 
 

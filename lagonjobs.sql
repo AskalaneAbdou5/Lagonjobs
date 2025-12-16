@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 11 déc. 2025 à 09:34
+-- Généré le : mar. 16 déc. 2025 à 13:41
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -35,6 +35,36 @@ CREATE TABLE `roles` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `offres`
+--
+
+CREATE TABLE `offres` (
+  `Id` int(11) NOT NULL,
+  `Type_de_contrat` varchar(10) NOT NULL,
+  `Titre` varchar(50) NOT NULL,
+  `Ville` varchar(20) NOT NULL,
+  `Teletravail` varchar(20) NOT NULL,
+  `Description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `offres`
+--
+
+CREATE TABLE `offres` (
+  `Id` int(11) NOT NULL,
+  `Type_de_contrat` varchar(10) NOT NULL,
+  `Titre` varchar(50) NOT NULL,
+  `Ville` varchar(20) NOT NULL,
+  `Teletravail` varchar(20) NOT NULL,
+  `Description` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateurs`
 --
 
@@ -58,6 +88,18 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Index pour la table `offres`
+--
+ALTER TABLE `offres`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `offres`
+--
+ALTER TABLE `offres`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
@@ -71,6 +113,18 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `roles`
 --
 ALTER TABLE `roles`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `offres`
+--
+ALTER TABLE `offres`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `offres`
+--
+ALTER TABLE `offres`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

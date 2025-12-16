@@ -1,3 +1,8 @@
+<?php
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/select.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +35,16 @@
 
             <label for="status">Status</label>
             <select name="status" >
-                <option value="0">Brouillon</option>
-                <option value="1">Publiée</option>
+                <?php for ($i=0; $i < count($status); $i++) { 
+                echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+                }?>
             </select>
 
             <label for="categorie">Catégorie</label>
             <select name="categorie" >
-                <option value="0">Catégorie</option>
-                <option value="1">Stage</option>
-                <option value="2">CDD</option>
-                <option value="3">CDI</option>
+                <?php for ($i=0; $i < count($categories); $i++) { 
+                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Type_de_travail']."</option>";
+                }?>
             </select>
 
             <label for="description">Description</label>
@@ -60,13 +65,15 @@
                 <th>Action</th>
             </tr>
 
+            <?php for ($i=0; $i < count($offres); $i++) { ?>
             <tr>
-                <td>Technicien et Maintenance</td>
-                <td>Publiée</td>
-                <td>CDD</td>
-                <td>C'est un emploie qui te forme</td>
+                <td><?php echo $offres[$i]['Titre'];?></td>
+                <td><?php echo $offres[$i]['Status'];?></td>
+                <td><?php echo $offres[$i]['Contrat'];?></td>
+                <td><?php echo $offres[$i]['Description'];?></td>
                 <td><button class="btn btn-outline">Modifier</button> <button class="btn btn-outline">Supprimer</button></td>
             </tr>
+            <?php } ?>
 
             
         </table>
