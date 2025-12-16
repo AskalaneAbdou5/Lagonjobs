@@ -9,12 +9,12 @@
 <body>
     <header class="site-header header-inner"> 
 
-    <h1><a href="index.html">Lagon</a>jobs</h1>
+    <h1><a href="index.php">Lagon</a>jobs</h1>
 
     <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.php">Accueil</a>
+        <a href="offres.php">Offres</a>
+        <a href="contact.php">Contact</a>
     </nav>
 
     </header>
@@ -23,7 +23,7 @@
 
         <h1>Connexion</h1>
 
-        <form action="Inscription.html" class="form row auth-card">
+        <form action="Inscription.php" class="form row auth-card">
 
             <label>Email</label><br>          
             <input type="email" name="email" required>
@@ -36,7 +36,7 @@
 
             <br><br>
             <button type="submit" class="btn btn-outline">Se connecter</button> 
-            <button class="btn"><a href="Inscription.html">Créer un compte</a></button>
+            <button class="btn"><a href="Inscription.php">Créer un compte</a></button>
 
 
         </form>
@@ -45,7 +45,7 @@
 
     <footer class="site-footer footer-inner">
         <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-        <a href="contact.html">Confidentialité Nous contacter.</a>
+        <a href="contact.php">Confidentialité Nous contacter.</a>
     </footer>
 
 

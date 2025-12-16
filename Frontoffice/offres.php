@@ -1,32 +1,8 @@
 <?php
-
-try{
-    $mysqlClient = new PDO('mysql:host=localhost;dbname=lagonjobs;charset=utf8', 'root', '');
-    $mysqlClient->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (Exception $e){
-    die('Erreur de connexion à la base de données : ' . $e->getMessage());
-}
-echo "connecter à la base de donnée";
-
-
-$sql_requete = 'SELECT * FROM offres';
-$sql = $mysqlClient->prepare($sql_requete);
-$sql->execute();
-$sql_resultat = $sql->fetchAll();
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+$lesOffres = RecupererLesOffres();
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -44,13 +20,13 @@ $sql_resultat = $sql->fetchAll();
   <header class="site-header header-inner">
 
 
-    <h1><a href="index.html">Lagon</a>jobs</h1>
+    <h1><a href="index.php">Lagon</a>jobs</h1>
     <nav class="nav">
-        <a href="index.html">Accueil</a>
+        <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
-        <a href="contact.html">Contact</a>
-        <a href="connexion.html" class="btn btn-outline">Connexion</a>
-        <a href="inscription.html" class="btn btn-outline">Inscription</a>
+        <a href="contact.php">Contact</a>
+        <a href="connexion.php" class="btn btn-outline">Connexion</a>
+        <a href="inscription.php" class="btn btn-outline">Inscription</a>
     </nav>
 
   </header>
@@ -96,7 +72,7 @@ $sql_resultat = $sql->fetchAll();
           <h2>Stagiaire Dévelopeur Web</h2>
           <p>Mamoudzou-Hybride</p>
           <p>Participer au développement des sites vitrine et e-commerce.</p>
-          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
         </article>
 
         <article class="card">
@@ -104,7 +80,7 @@ $sql_resultat = $sql->fetchAll();
           <h2>Technicien support</h2>
           <p>Dzaoudzi - Sur site</p>
           <p>Assistance utilisateur, resolution d'incidents et maintenance.</p>
-          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
         </article>
 
         <article class="card">
@@ -112,7 +88,7 @@ $sql_resultat = $sql->fetchAll();
           <h2>Admin systémes junior</h2>
           <p>Koungou - Hybride</p>
           <p>Administration Linux/Windows, sauvegardes et supervision.</p>
-          <a href="details_offres.html" class="btn btn-outline">Dêtail</a>
+          <a href="details_offres.php" class="btn btn-outline">Dêtail</a>
         </article>
       </section>
     </div>
@@ -122,7 +98,7 @@ $sql_resultat = $sql->fetchAll();
 
   <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-    <a href="contact.html">Confidentialité Nous contacter.</a>
+    <a href="contact.php">Confidentialité Nous contacter.</a>
   </footer>
     
 </body>

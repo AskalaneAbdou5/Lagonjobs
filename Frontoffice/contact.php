@@ -12,13 +12,13 @@
     <header class="site-header header-inner">
 
 
-    <h1><a href="index.html">Lagon</a>jobs</h1>
+    <h1><a href="index.php">Lagon</a>jobs</h1>
     <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offres.html">Offres</a>
-        <a href="contact.html">Contact</a>
-        <button class="btn btn-outline"><a href="connexion.html">Connexion</a></button>
-        <button class="btn btn-outline"><a href="inscription.html">Inscription</a></button>
+        <a href="index.php">Accueil</a>
+        <a href="offres.php">Offres</a>
+        <a href="contact.php">Contact</a>
+        <button class="btn btn-outline"><a href="connexion.php">Connexion</a></button>
+        <button class="btn btn-outline"><a href="inscription.php">Inscription</a></button>
     </nav>
 
   </header>
@@ -29,7 +29,7 @@
     <h1>Contact</h1>
     <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
 
-      <form action="contact.html" method="POST" class="form row auth-card">
+      <form action="contact.php" method="POST" class="form row auth-card">
         <label for="nom">Nom</label>
         <input type="text" name="nom" required>
 
@@ -52,7 +52,7 @@
 
   <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-    <a href="contact.html">Confidentialité Nous contacter.</a>
+    <a href="contact.php">Confidentialité Nous contacter.</a>
   </footer>
 
 

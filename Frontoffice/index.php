@@ -9,13 +9,13 @@
 <body>
     <header class="site-header header-inner">
 
-        <h1><a href="index.html">Lagon</a>jobs</h1>
+        <h1><a href="index.php">Lagon</a>jobs</h1>
         <nav class="nav">
-            <a href="index.html">Accueil</a>
+            <a href="index.php">Accueil</a>
             <a href="offres.php">Offres</a>
-            <a href="contact.html">Contact</a>
-            <a href="connexion.html" class="btn btn-outline">Connexion</a>
-            <a href="inscription.html" class="btn btn-outline">Inscription</a>
+            <a href="contact.php">Contact</a>
+            <a href="connexion.php" class="btn btn-outline">Connexion</a>
+            <a href="inscription.php" class="btn btn-outline">Inscription</a>
         </nav>
 
 
@@ -73,7 +73,7 @@
                     <h3>Stagiaire Developpeur Web</h3>
                     <p>Mamoudzou - Hybride</p>
                     <p>Participer au développement et é-commerce.</p>
-                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
                 </article>
                 
 
@@ -82,7 +82,7 @@
                     <h3>Technicien support</h3>
                     <p>Dzaoudzi - Hybride</p>
                     <p>Assistance virtulle. Indication et Maintenance.</p>
-                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
                 </article>
 
                 <article class="card">
@@ -90,7 +90,7 @@
                     <h3>Stagiaire Developpeur Web</h3>
                     <p>Mamoudzou - Hybride</p>
                     <p>Participer au développement et é-commerce.</p>
-                    <button class="btn btn-outline"><a href="details_offres.html">Voir</a></button>
+                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
                 </article>
             </div>
         </section>
@@ -99,7 +99,7 @@
 
     <footer class="site-footer footer-inner">
         <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
-        <a href="contact.html">Confidentialité Nous contacter.</a>
+        <a href="contact.php">Confidentialité Nous contacter.</a>
     </footer>
     
 </body>
