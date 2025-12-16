@@ -78,13 +78,19 @@ $lesOffres = RecupererLesOffres();
         ?>
         
         <article class="card">
-          <p><?= ($offre['Type_de_contrat']); ?></p> 
+          <p><?= ($offre['Titre']); ?></p> 
                 
-          <h2><?= ($offre['Titre']); ?></h2>
+          <h2><?= ($offre['Contrat']); ?></h2>
                 
-          <p><?= ($offre['Ville']); ?></p>
+          <p><?= ($offre['Type_de_travail']); ?></p>
                 
           <p><?= ($offre['Description']); ?></p>
+
+          <p><?= ($offre['Ville']); ?></p>
+
+          <p><?= ($offre['Date_du_debut']); ?></p>
+
+          <p><?= ($offre['Date_de_fin']); ?></p>
                 
         </article>
 
