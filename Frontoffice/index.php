@@ -17,7 +17,7 @@ $lesOffres = RecupererLesOffres();
 <body>
     <header class="site-header header-inner">
 
-        <h1><a href="index.php">Lagon</a>jobs</h1>
+        <span class="logo"><a href="gestion_offre.html">Lagon</a>jobs</span>
         <nav class="nav">
             <a href="index.php">Accueil</a>
             <a href="offres.php">Offres</a>
