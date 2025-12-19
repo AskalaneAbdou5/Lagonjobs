@@ -1,6 +1,6 @@
 <?php
 require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
-$lesOffres = RecupererLesOffres();
+$LaDerniereOffre = RecupererLaDerniereOffre();
 
 ?>
 
@@ -68,39 +68,46 @@ $lesOffres = RecupererLesOffres();
             </div>
         </section>
 
-        <hr class="container">
+        <!--Offres d'emploi et stages-->
+        
+        <div class="container">
+            <h2>Les 3 dernières offres ajoutées</h2>
+            <section class="cards">
 
-        <section class="section container">
-
-            <h2>Dernières offres</h2>
-
-            <div class="cards">
-                <article class="card ">
-                    <p>Stage</p>
-                    <h3>Stagiaire Developpeur Web</h3>
-                    <p>Mamoudzou - Hybride</p>
-                    <p>Participer au développement et é-commerce.</p>
-                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
-                </article>
+                <?php
+                if (empty($LaDerniereOffre)) {
+                echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
+                } else {
+                foreach ($LaDerniereOffre as $offre) {
+                ?>
                 
-
                 <article class="card">
-                    <p>CDD</p>
-                    <h3>Technicien support</h3>
-                    <p>Dzaoudzi - Hybride</p>
-                    <p>Assistance virtulle. Indication et Maintenance.</p>
-                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
+                    <p><?= ($offre['Titre']); ?></p> 
+                            
+                    <h2><?= ($offre['Contrat']); ?></h2>
+                            
+                    <p><?= ($offre['Type_de_travail']); ?></p>
+                            
+                    <p><?= ($offre['Description']); ?></p>
+
+                    <p><?= ($offre['Ville']); ?></p>
+
+                    <p><?= ($offre['Date_du_debut']); ?></p>
+
+                    <p><?= ($offre['Date_de_fin']); ?></p>
+
+                    <p><a class="btn btn-outline" href="details_offres.php">detail</a></p>
+                        
                 </article>
 
-                <article class="card">
-                    <p>Stage</p>
-                    <h3>Stagiaire Developpeur Web</h3>
-                    <p>Mamoudzou - Hybride</p>
-                    <p>Participer au développement et é-commerce.</p>
-                    <button class="btn btn-outline"><a href="details_offres.php">Voir</a></button>
-                </article>
-            </div>
-        </section>
+                <?php 
+                }
+                } 
+                ?>
+
+            </section>
+
+        </div>
         
     </main>
 

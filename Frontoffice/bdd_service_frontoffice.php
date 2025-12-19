@@ -1,5 +1,6 @@
 <?php
 
+// connexion à la base de donnée
 function connexionBdd()
 {
     try {
@@ -16,7 +17,7 @@ function connexionBdd()
 
 
 
-
+// Recuperer les offres
 function RecupererLesOffres()
 {
     $mysqlClient = connexionBdd();
@@ -24,6 +25,17 @@ function RecupererLesOffres()
     $sql = $mysqlClient->prepare($sql_rqt);
     $sql->execute();
     $sql_resultat = $sql->fetchAll();
+    return $sql_resultat;
+}
 
+
+// Recuperer les derniere offres
+function RecupererLaDerniereOffre()
+{
+    $mysqlClient = connexionBdd();
+    $sql_rqt = 'SELECT * FROM offres ORDER BY id DESC LIMIT 3';
+    $sql = $mysqlClient->prepare($sql_rqt);
+    $sql->execute();
+    $sql_resultat = $sql->fetchAll();
     return $sql_resultat;
 }
