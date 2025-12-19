@@ -43,7 +43,7 @@ require_once(__DIR__ . '/select.php');
             <label for="categorie">Catégorie</label>
             <select name="categorie" >
                 <?php for ($i=0; $i < count($categories); $i++) { 
-                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Type_de_travail']."</option>";
+                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
                 }?>
             </select>
 

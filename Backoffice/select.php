@@ -8,7 +8,7 @@ of.Description,
 ctr.Contrat,
 st.Status FROM offres of
 JOIN status st ON of.Id_status=st.Id
-JOIN contrats ctr ON of.Id_contrat=ctr.Id";
+JOIN types_de_contrat ctr ON of.Id_contrat=ctr.Id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $offres=$stmt->fetchall();
@@ -23,7 +23,7 @@ $status=$stmt->fetchall();
 
 //Selection des categories
 
-$sql = "SELECT * FROM `types_de_travail`";
+$sql = "SELECT * FROM `types_de_contrat`";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $categories=$stmt->fetchall();
