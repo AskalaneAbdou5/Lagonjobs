@@ -79,7 +79,10 @@ $lesOffres = RecupererLesOffres();
                         <h3>Stagiaire Developpeur Web</h3>
                         <p>Mamoudzou - Hybride</p>
                         <p>Participer au développement et é-commerce.</p>
-                        <a href="details_offres.html" class="btn btn-outline">Voir</a>
+                        <form action="details_offres.php" method="get">
+                            <input type="hidden" name="id_offre" value="0">
+                            <button type="submit" class="btn btn-outline">Voir</button>
+                        </form>
                     </article>
                     
 
@@ -88,7 +91,10 @@ $lesOffres = RecupererLesOffres();
                         <h3>Technicien support</h3>
                         <p>Dzaoudzi - Hybride</p>
                         <p>Assistance virtulle. Indication et Maintenance.</p>
-                        <a href="details_offres.html" class="btn btn-outline">Voir</a>
+                        <form action="details_offres.php" method="get">
+                            <input type="hidden" name="id_offre" value="1">
+                            <button type="submit" class="btn btn-outline">Voir</button>
+                        </form>
                     </article>
 
                     <article class="card">
@@ -96,7 +102,10 @@ $lesOffres = RecupererLesOffres();
                         <h3>Stagiaire Developpeur Web</h3>
                         <p>Mamoudzou - Hybride</p>
                         <p>Participer au développement et é-commerce.</p>
-                        <a href="details_offres.html" class="btn btn-outline">Voir</a>
+                        <form action="details_offres.php" method="get">
+                            <input type="hidden" name="id_offre" value="2">
+                            <button type="submit" class="btn btn-outline">Voir</button>
+                        </form>
                     </article>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 <?php
-require_once('../asset/configmysql.php');
 //Selection des offres
 
 $sql = "SELECT of.Id,

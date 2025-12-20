@@ -1,8 +1,20 @@
 <?php
 require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/select.php');
+require_once(__DIR__ . '/fonction.php');
+
+if (isset($_GET['id_offre'])){
+    $id_offre=$_GET['id_offre'];
+    $contrat=$offres[$id_offre]['Contrat'];
+    $titre=$offres[$id_offre]['Titre'];
+    $ville=$offres[$id_offre]['Nom_ville'];
+    $mode_de_travail=$offres[$id_offre]['Mode_de_travail'];
+    $nb_jours=$offres[$id_offre]['nb_jours'];
+    $mission=$offres[$id_offre]['Mission'];
+    $profil=$offres[$id_offre]['Profil'];
+}
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +26,8 @@ require_once('../asset/configmysql.php');
     <link rel="icon" type="image/png" href="../logo/Logo.png" />
 </head>
 <body>
-    <header class="site-header header-inner">
 
+    <header class="site-header header-inner">
 
     <span class="logo"><a href="index.html">Lagon</a>jobs</span>
     <nav class="nav">
@@ -37,18 +49,16 @@ require_once('../asset/configmysql.php');
         <br>
 
         <article class="card">
-            <p>Stage</p>
-            <h1>Stagiaire Dévelopeur Web</h1>
+            <p class="badge"><?php echo $contrat ?></p>
+            <h1><?php echo $titre ?></h1>
 
-            <p>Mamoudzou - Hybride - 3 à 6 mois</p>
+            <p><?php echo $ville." - ".$mode_de_travail." - ".calcul_periode_de_contrat($nb_jours) ?></p>
 
-            <p><b>Mission:</b> intégrer des masquettes,corriger les bugs, Participer aux revues de 
-                code (niveau débutant).
-            </p>
+            <p><b>Mission:</b> <?php echo $mission ?></p>
 
-            <P><b>Profil :</b> motivation, bases HTML/CSS/JS,notions de PHP bienvenues.</P>
+            <P><b>Profil :</b> <?php echo $profil ?></P>
             <button class="btn"><a href="">Postuler</a></button>
-            <button class="btn btn-outline"><a href="offres.php">Voir d'autres offres</a></button>
+            <a href="offres.php" class="btn btn-outline">Voir d'autres offres</a>
 
         </article>
 

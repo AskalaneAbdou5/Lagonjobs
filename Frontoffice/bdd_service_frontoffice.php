@@ -5,7 +5,6 @@ function connexionBdd()
     try {
         // On se connecte à MySQL
         $mysqlClient = new PDO('mysql:host=localhost;dbname=lagonjobs;charset=utf8', 'root', '');
-        echo "Connexion réussie";
         return $mysqlClient;
     } catch (Exception $e) {
         // En cas d'erreur, on affiche un message et on arrête tout
