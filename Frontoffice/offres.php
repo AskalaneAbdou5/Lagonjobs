@@ -92,7 +92,10 @@ $lesOffres = RecupererLesOffres();
 
           <p><?= ($offre['Date_de_fin']); ?></p>
 
-          <p><a class="btn btn-outline" href="details_offres.php">detail</a></p>
+          <form action="details_offres.php" method="get">
+              <input type="hidden" name="id_offre" value="0">
+              <button type="submit" class="btn btn-outline">Voir</button>
+          </form>
                 
         </article>
 
