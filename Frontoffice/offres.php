@@ -91,6 +91,8 @@ $lesOffres = RecupererLesOffres();
           <p><?= ($offre['Date_du_debut']); ?></p>
 
           <p><?= ($offre['Date_de_fin']); ?></p>
+
+          <p><a class="btn btn-outline" href="details_offres.php">detail</a></p>
                 
         </article>
 
