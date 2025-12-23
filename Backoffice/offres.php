@@ -31,13 +31,13 @@ require_once(__DIR__ . '/select.php');
         
         <h1>Gestion des emploies</h1><br>
 
-        <form action="" class="form">
+        <form action="gestion_offre.php" method="get" class="form">
 
             <div class="stack">
 
                 <div>
                     <label for="titre">Titre :</label>
-                    <input type="text" name="titre" placeholder="Titre">
+                    <input type="text" name="titre" placeholder="Titre" required>
                 </div>
 
                 <div class="row">
@@ -62,23 +62,23 @@ require_once(__DIR__ . '/select.php');
 
                 <div>
                     <label for="description">Description :</label>
-                    <textarea name="description"></textarea>
+                    <textarea name="description" required></textarea>
                 </div>
 
                 <div>
                     <label for="mission">Mission :</label>
-                    <input type="text" name="mission">
+                    <input type="text" name="mission" required>
                 </div>
 
                 <div>
                     <label for="profil">Profil :</label>
-                    <input type="text" name="profil">
+                    <input type="text" name="profil" required>
                 </div>
 
                 <div class="row">
                     <div>
                         <label for="ville">Ville :</label>
-                        <select name="categorie" >
+                        <select name="ville" >
                             <?php for ($i=0; $i < count($villes); $i++) { 
                             echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
                             }?>
@@ -101,19 +101,19 @@ require_once(__DIR__ . '/select.php');
                     <div class="row">
                         <div>
                             <label for="date_debut">Debut</label>
-                            <input type="date" name="date_debut" placeholder="Date de debut">
+                            <input type="date" name="date_debut" placeholder="Date de debut" required>
                         </div>
 
                         <div>
                             <label for="date_fin">Fin</label>
-                            <input type="date" name="date_fin" placeholder="Date de fin">
+                            <input type="date" name="date_fin" placeholder="Date de fin" required>
                         </div>
 
                     </div>
                 </div>
                 
                 <div class="action">
-                    <button class="btn btn-outline" >Ajouter</button>
+                    <button class="btn btn-outline" type="submit">Ajouter</button>
                 </div>
                 
 
