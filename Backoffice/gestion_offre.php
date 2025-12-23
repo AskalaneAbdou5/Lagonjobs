@@ -1,6 +1,7 @@
 <?php
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/insert.php');
+require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/select.php');
 ?>
 
@@ -68,7 +69,16 @@ require_once(__DIR__ . '/select.php');
                 <td><?php echo $offres[$i]['Status'];?></td>
                 <td><?php echo $offres[$i]['Contrat'];?></td>
                 <td><?php echo $offres[$i]['Description'];?></td>
-                <td><button class="btn btn-outline">Modifier</button> <button class="btn btn-outline">Supprimer</button></td>
+                <td>
+
+                    <button class="btn btn-outline">Modifier</button>
+
+                    <form action="gestion_offre.php" method="get">
+                        <input type="hidden" name="delete_offre" value="<?php echo $offres[$i]['Id'] ?>">
+                        <button class="btn btn-outline">Supprimer</button>
+                    </form> 
+
+                </td>
             </tr>
             <?php } ?>
 
