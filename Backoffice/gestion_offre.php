@@ -20,7 +20,8 @@ require_once(__DIR__ . '/select.php');
 
     <span class="logo"><a href="gestion_offre.html">Lagon</a>jobs</span>
     <nav class="nav">
-        <a href="gestion_offre.html">Tableau de bord</a>
+        <a href="gestion_offre.php">Tableau de bord</a>
+        <a href="offres.php">Offres</a>
         <a href="">Utilisateur</a>
     </nav>
 
@@ -29,28 +30,23 @@ require_once(__DIR__ . '/select.php');
     <main class="container">
         <h1>Gestion des emploies</h1><br>
 
-        <form action="" class="form">
-            <label for="titre">Titre</label>
-            <input type="text" name="titre">
+        <form action="" class="form cards search-inline">
+            <input type="text" name="titre" placeholder="Titre">
 
-            <label for="status">Status</label>
             <select name="status" >
+                <option>Status</option>
                 <?php for ($i=0; $i < count($status); $i++) { 
                 echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
                 }?>
             </select>
 
-            <label for="categorie">Catégorie</label>
             <select name="categorie" >
+                <option>Catégorie</option>
                 <?php for ($i=0; $i < count($categories); $i++) { 
                 echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
                 }?>
             </select>
 
-            <label for="description">Description</label>
-            <textarea name="description" ></textarea>
-
-            <button class="btn btn-outline" >Ajouter</button>
             <button class="btn btn-outline" >Filtrer</button>
             <button class="btn btn-outline" >Reinitialiser</button>
 

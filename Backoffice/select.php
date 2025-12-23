@@ -27,5 +27,20 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $categories=$stmt->fetchall();
 
+//Selection des villes
+
+$sql = "SELECT * FROM `villes`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$villes=$stmt->fetchall();
+
+//Selection des modes de travail
+
+$sql = "SELECT * FROM `modes_de_travail`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$mode_travail=$stmt->fetchall();
+
+
 
 ?>
