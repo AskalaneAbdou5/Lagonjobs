@@ -42,5 +42,13 @@ $stmt->execute();
 $mode_travail=$stmt->fetchall();
 
 
+//Selection des modes de travail
+
+$sql = "SELECT * FROM `utilisateurs`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$utilisateurs=$stmt->fetchall();
+
+
 
 ?>

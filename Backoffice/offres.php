@@ -22,14 +22,14 @@ require_once(__DIR__ . '/select.php');
     <nav class="nav">
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
-        <a href="">Utilisateur</a>
+        <a href="utilisateurs.php">Utilisateur</a>
     </nav>
 
   </header>
 
     <main class="container">
         
-        <h1>Gestion des emploies</h1><br>
+        <h1>Creation d'emploie</h1><br>
 
         <form action="gestion_offre.php" method="get" class="form">
 

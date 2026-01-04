@@ -11,4 +11,16 @@ if (isset($_GET['delete_offre'])){
     ]);
 
 }
+
+if (isset($_GET['delete_user'])){
+
+    $id_user=$_GET['delete_user'];
+
+    $sql = "DELETE FROM utilisateurs WHERE Id=:id_user";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        'id_user'=>$id_user
+    ]);
+
+}
 ?>

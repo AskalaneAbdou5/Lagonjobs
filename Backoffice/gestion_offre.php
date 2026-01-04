@@ -24,7 +24,7 @@ require_once(__DIR__ . '/select.php');
     <nav class="nav">
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
-        <a href="">Utilisateur</a>
+        <a href="utilisateurs.php">Utilisateur</a>
     </nav>
 
   </header>
