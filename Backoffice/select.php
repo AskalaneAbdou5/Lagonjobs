@@ -3,6 +3,8 @@
 
 $sql = "SELECT of.Id,
 of.Titre,
+of.Id_status,
+of.Id_contrat,
 of.Description,
 ctr.Contrat,
 st.Status FROM offres of

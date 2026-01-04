@@ -2,6 +2,7 @@
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/insert.php');
 require_once(__DIR__ . '/delete.php');
+require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
 ?>
 
@@ -70,8 +71,14 @@ require_once(__DIR__ . '/select.php');
                 <td><?php echo $offres[$i]['Contrat'];?></td>
                 <td><?php echo $offres[$i]['Description'];?></td>
                 <td>
-
-                    <button class="btn btn-outline">Modifier</button>
+                    <form action="update_emploi.php" method="post">
+                        <input type="hidden" name="update_id" value="<?php echo $offres[$i]['Id'];?>">
+                        <input type="hidden" name="update_titre" value="<?php echo $offres[$i]['Titre'];?>">
+                        <input type="hidden" name="update_status" value="<?php echo $offres[$i]['Id_status'];?>">
+                        <input type="hidden" name="update_contrat" value="<?php echo $offres[$i]['Id_contrat'];?>">
+                        <input type="hidden" name="update_description" value="<?php echo $offres[$i]['Description'];?>">
+                        <button class="btn btn-outline" type="submit">Modifier</button>
+                    </form>
 
                     <form action="gestion_offre.php" method="get">
                         <input type="hidden" name="delete_offre" value="<?php echo $offres[$i]['Id'] ?>">
