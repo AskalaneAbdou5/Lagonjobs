@@ -1,5 +1,6 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/insert.php');
 ?>
 
 

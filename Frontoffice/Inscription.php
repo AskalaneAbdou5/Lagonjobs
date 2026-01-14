@@ -1,23 +1,6 @@
 <?php
 require_once('../asset/configmysql.php');
-
-if (isset($_GET['prenom']) && isset($_GET['nom']) && isset($_GET['email']) && isset($_GET['password'])) {
-
-    $Prenom=$_GET['prenom'];
-    $Nom=$_GET['nom'];
-    $Email=$_GET['email'];
-    $Motdepasse=$_GET['password'];
-
-    $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES('$Nom','$Prenom','$Email','$Motdepasse',2)"; 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-
-}
-
-
-
-
-    
+   
 ?>
 
 
@@ -46,7 +29,7 @@ if (isset($_GET['prenom']) && isset($_GET['nom']) && isset($_GET['email']) && is
         
         <h1> Inscription </h1>
 
-        <form action="Inscription.php" class="form row auth-card" method="get">
+        <form action="connexion.php" class="form row auth-card" method="get">
 
                 <div class="row">
                     <div>
