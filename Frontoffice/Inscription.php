@@ -31,6 +31,7 @@ require_once('../asset/configmysql.php');
 
         <form action="connexion.php" class="form row auth-card" method="get">
 
+            <div class="stack">
                 <div class="row">
                     <div>
                         <label >Prénom</label>         
