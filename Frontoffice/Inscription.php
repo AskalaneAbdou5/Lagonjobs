@@ -1,5 +1,10 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+require_once('../asset/configmysql.php');
+
+$Prenom= $_GET['prenom'];
+$Nom=$_GET['nom'];
+$Email=$_GET['email'];
+$Motdepasse=$_GET['password'];
 
 ?>
 
@@ -30,12 +35,12 @@ require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.
         
         <h1> Inscription </h1>
 
-        <form action="connexion.php" class="form row auth-card">
+        <form action="connexion.php" class="form row auth-card" method="get">
 
                 <div class="row">
                     <div>
                         <label >Prénom</label>         
-                        <input type="text" name="nom" required>
+                        <input type="text" name="prenom" required>
                     </div>
 
                     <div>
