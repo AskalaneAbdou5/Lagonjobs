@@ -15,7 +15,8 @@ FROM offres of
 JOIN status st ON of.Id_status=st.Id
 JOIN types_de_contrat tdc ON of.Id_contrat=tdc.Id
 JOIN villes vil ON of.Id_ville=vil.Id
-JOIN modes_de_travail mdt ON of.Id_mode_de_travail=mdt.Id";
+JOIN modes_de_travail mdt ON of.Id_mode_de_travail=mdt.Id 
+ORDER BY of.Id DESC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $offres=$stmt->fetchall();

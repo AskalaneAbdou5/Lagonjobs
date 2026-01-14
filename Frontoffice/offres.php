@@ -1,6 +1,6 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
-$lesOffres = RecupererLesOffres();
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/select.php');
 
 ?>
 
@@ -71,29 +71,27 @@ $lesOffres = RecupererLesOffres();
       <section class="cards">
 
         <?php
-        if (empty($lesOffres)) {
-          echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
-        } else {
-          foreach ($lesOffres as $offre) {
+        for ($i=0; $i < count($offres); $i++) {
         ?>
         
         <article class="card">
-          <p><?= ($offre['Titre']); ?></p> 
-                
-          <h2><?= ($offre['Contrat']); ?></h2>
-                
-          <p><?= ($offre['Type_de_travail']); ?></p>
-                
-          <p><?= ($offre['Description']); ?></p>
+          <p class="badge"><?php echo $offres[$i]['Contrat']; ?></p> 
+                  
+          <h2><?php echo $offres[$i]['Titre']; ?></h2>
+                  
+          <p><?php echo $offres[$i]['Mode_de_travail']; ?></p>
+                  
+          <p><?php echo $offres[$i]['Description']; ?></p>
 
-          <p><?= ($offre['Ville']); ?></p>
+          <p><?php echo $offres[$i]['Nom_ville']; ?></p>
 
-          <p><?= ($offre['Date_du_debut']); ?></p>
+          <p><?php echo $offres[$i]['Date_debut']; ?></p>
 
-          <p><?= ($offre['Date_de_fin']); ?></p>
+          <p><?php echo $offres[$i]['Date_fin']; ?></p>
+
 
           <form action="details_offres.php" method="get">
-              <input type="hidden" name="id_offre" value="0">
+              <input type="hidden" name="id_offre" value="<?php echo $offres[$i]['Id'];?>">
               <button type="submit" class="btn btn-outline">Voir</button>
           </form>
                 
@@ -101,7 +99,6 @@ $lesOffres = RecupererLesOffres();
 
         <?php 
           }
-        } 
         ?>
 
       </section>

@@ -42,12 +42,8 @@ if (isset($_GET['id_offre'])){
 
 
     <main class="container">
-
-        <a href="offres.php">Retour aux offres</a>
-
         <br>
         <br>
-
         <article class="card">
             <p class="badge"><?php echo $contrat ?></p>
             <h1><?php echo $titre ?></h1>
