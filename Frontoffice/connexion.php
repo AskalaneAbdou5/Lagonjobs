@@ -47,7 +47,7 @@ require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.
 
                 <div class="action">
                     <button type="submit" class="btn btn-outline">Se connecter</button> 
-                    <a href="Inscription.html" class="btn">Créer un compte</a>
+                    <a href="Inscription.php" class="btn">Créer un compte</a>
                 </div>
             </div>
 

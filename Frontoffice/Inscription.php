@@ -1,18 +1,24 @@
 <?php
 require_once('../asset/configmysql.php');
 
-$Prenom= $_GET['prenom'];
-$Nom=$_GET['nom'];
-$Email=$_GET['email'];
-$Motdepasse=$_GET['password'];
+if (isset($_GET['prenom']) && isset($_GET['nom']) && isset($_GET['email']) && isset($_GET['password'])) {
 
-$sql = "INSERT INTO utilisateurs ( Prenom, Nom, Email, Mot_de_passe, Id_role) VALUES (P"; 
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
+    $Prenom=$_GET['prenom'];
+    $Nom=$_GET['nom'];
+    $Email=$_GET['email'];
+    $Motdepasse=$_GET['password'];
+
+    $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES('$Nom','$Prenom','$Email','$Motdepasse',2)"; 
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+}
 
 
+
+
+    
 ?>
-
 
 
 
@@ -40,7 +46,7 @@ $stmt->execute();
         
         <h1> Inscription </h1>
 
-        <form action="connexion.php" class="form row auth-card" method="get">
+        <form action="Inscription.php" class="form row auth-card" method="get">
 
                 <div class="row">
                     <div>
