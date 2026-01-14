@@ -14,6 +14,8 @@ if (isset($_GET['id_offre'])){
     $profil=$offres[$id_offre]['Profil'];
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
