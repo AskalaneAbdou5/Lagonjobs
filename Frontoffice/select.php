@@ -5,8 +5,11 @@ of.Titre,
 tdc.Contrat,
 vil.Nom_ville,
 mdt.Mode_de_travail,
+of.Description,
 of.Mission,
 of.Profil,
+of.Date_debut,
+of.Date_fin,
 TIMESTAMPDIFF(DAY, of.Date_debut, of.Date_fin) as nb_jours
 FROM offres of
 JOIN status st ON of.Id_status=st.Id
