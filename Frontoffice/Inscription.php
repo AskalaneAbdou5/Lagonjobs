@@ -6,6 +6,11 @@ $Nom=$_GET['nom'];
 $Email=$_GET['email'];
 $Motdepasse=$_GET['password'];
 
+$sql = "INSERT INTO utilisateurs ( Prenom, Nom, Email, Mot_de_passe, Id_role) VALUES (P"; 
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+
 ?>
 
 
