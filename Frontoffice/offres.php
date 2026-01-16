@@ -86,7 +86,6 @@ require_once(__DIR__ . '/select.php');
           <p><?php echo $offres[$i]['Nom_ville']; ?></p>
 
 
-
           <form action="details_offres.php" method="get">
               <input type="hidden" name="id_offre" value="<?php echo $i?>">
               <button type="submit" class="btn btn-outline">Voir</button>

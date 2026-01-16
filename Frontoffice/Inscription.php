@@ -59,7 +59,7 @@ require_once('../asset/configmysql.php');
 
                     <div>
                         <label>Confirmer le mot de passe</label>          
-                        <input type="password" name="password" required>
+                        <input type="password" name="re_password" required>
                     </div>
                 </div>
                 <div class="action">
