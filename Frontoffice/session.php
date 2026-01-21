@@ -8,13 +8,13 @@ if (isset($_GET['email']) && isset($_GET['password'])){
         if ($utilisateurs[$i]['Email'] === $_GET['email'] && $utilisateurs[$i]['Mot_de_passe'] ===  $_GET['password']){
 
             $_SESSION['LOG_USER']= $utilisateurs[$i]['Nom']." ".$utilisateurs[$i]['Prenom'];
-            echo "<script>alert('Bienvenue".$_SESSION['LOG_USER']."');</script>";
+            echo "<script>alert('Bienvenue ".$_SESSION['LOG_USER']."');window.location.href = 'index.php';</script>";
 
         }else{
-        echo "<script>
-            alert('L\'identifiant ou le mot de passe est incorrect');
-            window.location.href = 'connexion.php';
-        </script>";
+            echo "<script>
+                alert('L\'identifiant ou le mot de passe est incorrect');
+                window.location.href = 'connexion.php';
+            </script>";
         }
     }
 }
