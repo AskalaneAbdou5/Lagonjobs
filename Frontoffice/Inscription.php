@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/session.php');
    
 ?>
 

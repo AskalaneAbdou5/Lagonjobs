@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/session.php');
 require_once(__DIR__ . '/insert.php');
 ?>
 
@@ -29,7 +31,7 @@ require_once(__DIR__ . '/insert.php');
 
         <h1>Connexion</h1>
 
-        <form action="Inscription.php" class="form row auth-card">
+        <form action="index.php" class="form row auth-card" method="get">
 
             <div class="stack">
                 <div class="stack">

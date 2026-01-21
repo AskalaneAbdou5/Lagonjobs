@@ -21,5 +21,10 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $offres=$stmt->fetchall();
 
+$sql = "SELECT * FROM `utilisateurs`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$utilisateurs=$stmt->fetchall();
+
 
 ?>

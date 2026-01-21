@@ -1,5 +1,7 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+session_start();
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/session.php');
 ?>
 
 
@@ -23,8 +25,16 @@ require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
         <a href="contact.php">Contact</a>
-        <a href="connexion.php" class="btn btn-outline">Connexion</a>
-        <a href="inscription.php" class="btn btn-outline">Inscription</a>
+        <?php
+        if(!isset($_SESSION['LOG_USER'])){
+        ?>
+            <button class="btn btn-outline" onclick="window.location.href='connexion.php'">Connexion</button>
+            <button class="btn" onclick="window.location.href='inscription.php'">Inscription</button>
+        <?php }else{ ?>
+
+            <button class="btn" onclick="window.location.href='deconnexion.php'">Deconnexion</button>
+
+        <?php } ?>
     </nav>
 
   </header>
