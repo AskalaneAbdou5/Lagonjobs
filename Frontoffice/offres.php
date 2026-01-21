@@ -52,20 +52,23 @@ require_once(__DIR__ . '/select.php');
             <input type="text" name="motcle" placeholder="Mot-clé">
             
             <select name="type_de_contrat" >
-              <option value="0">Stage</option>
-              <option value="1">CDD</option>
-              <option value="2">CDI</option>
+                <option>Type de contrat</option>
+                <?php for ($i=0; $i < count($categories); $i++) { 
+                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+                }?>
             </select>
 
-            <select name="ville" >
-              <option value="0">Mamoudzou</option>
-              <option value="1">Dzaoudzi</option>
-              <option value="2">Koungou</option>
+            <select name="villes" >
+                <option>Ville</option>
+                <?php for ($i=0; $i < count($villes); $i++) { 
+                echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
+                }?>
             </select>
 
-            <select name="Télétravail" >
-              <option value="0">Hybride</option>
-              <option value="1">Sur site</option>
+            <select name="mode_de_travail" >
+                <?php for ($i=0; $i < count($mode_travail); $i++) { 
+                echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
+                }?>
             </select>
 
             <button type="submit" class="btn">Filtrer</button>

@@ -25,6 +25,7 @@ require_once(__DIR__ . '/session.php');
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
         <a href="contact.php">Contact</a>
+        
         <?php
         if(!isset($_SESSION['LOG_USER'])){
         ?>

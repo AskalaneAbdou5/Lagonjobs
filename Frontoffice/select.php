@@ -1,4 +1,5 @@
 <?php 
+//Selection des offres
 
 $sql = "SELECT of.Id,
 of.Titre,
@@ -21,10 +22,33 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $offres=$stmt->fetchall();
 
+//Selection des utilisateurs
+
 $sql = "SELECT * FROM `utilisateurs`";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $utilisateurs=$stmt->fetchall();
+
+//Selection des categories
+
+$sql = "SELECT * FROM `types_de_contrat`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$categories=$stmt->fetchall();
+
+//Selection des villes
+
+$sql = "SELECT * FROM `villes`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$villes=$stmt->fetchall();
+
+//Selection des modes de travail
+
+$sql = "SELECT * FROM `modes_de_travail`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$mode_travail=$stmt->fetchall();
 
 
 ?>
