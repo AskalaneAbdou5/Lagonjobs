@@ -55,7 +55,7 @@ require_once(__DIR__ . '/select.php');
 
         </form><br>
 
-        <table border="2px">
+        <table class="table-offres">
             <tr>
                 <th>Titre</th>
                 <th>Statut</th>

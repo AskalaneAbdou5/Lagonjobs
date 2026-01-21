@@ -32,7 +32,7 @@ require_once(__DIR__ . '/select.php');
 
         <h1>Gestion des Utilisateurs</h1>
 
-        <table border="2px">
+        <table class="table-offres">
             <tr>
                 <th>Utilisateurs</th>
                 <th>Emails</th>
