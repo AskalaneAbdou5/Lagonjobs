@@ -65,7 +65,7 @@ require_once('../asset/configmysql.php');
                 <div class="action">
                     <div>
                         <button type="submit" class="btn btn-outline">Créer mon compte</button> 
-                        <a href="connexion.php" class="btn">Déjà inscrit?</a>
+                        <button class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
                     </div>
                 </div>
             </div>

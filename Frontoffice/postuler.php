@@ -1,0 +1,89 @@
+<?php
+require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../logo/Logo.png" />
+</head>
+<body>
+
+    <header class="site-header header-inner">
+
+
+    <span class="logo"><a href="index.html">Lagon</a>jobs</span>
+    <nav class="nav">
+        <a href="index.php">Accueil</a>
+        <a href="offres.php">Offres</a>
+        <a href="contact.php">Contact</a>
+        <a href="connexion.php" class="btn btn-outline">Connexion</a>
+        <a href="inscription.php" class="btn btn-outline">Inscription</a>
+    </nav>
+
+  </header>
+
+  <main >
+    
+    <!--Formullaire-->
+    <div style="padding-left: 2rem;">
+      <h1>Contact</h1>
+      <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
+    </div>
+
+      <form action="contact.html" method="POST" class="form">
+        
+        <div class="stack">
+          <div class="row">
+            <div>
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" required>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="text" name="email" required>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div>
+              <label for="sujet">Sujet</label>
+              <input type="text" name="suje" required>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea name="message" id=""></textarea>
+            </div>
+          </div>
+
+          <div class="action">
+            <button type="submit" class="btn">Envoyez</button>
+            <button type="reset" class="btn btn-outline">Effacer</button>
+          </div>
+        </div>
+
+      </form><br>
+
+
+  </main>
+
+  <footer class="site-footer footer-inner">
+    <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>
+    <a href="contact.php">Confidentialité Nous contacter.</a>
+  </footer>
+
+
+
+    
+
+    
+</body>
+</html>

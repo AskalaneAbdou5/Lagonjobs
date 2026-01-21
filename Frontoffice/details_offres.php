@@ -55,8 +55,8 @@ if (isset($_GET['id_offre'])){
             <p><b>Mission:</b> <?php echo $mission ?></p>
 
             <P><b>Profil :</b> <?php echo $profil ?></P>
-            <button class="btn"><a href="">Postuler</a></button>
-            <a href="offres.php" class="btn btn-outline">Voir d'autres offres</a>
+            <button class="btn" type="submit">Postuler</button>
+            <button class="btn btn-outline" onclick="window.location.href='offres.php'">Voir d'autres offres</button>
 
         </article>
 
