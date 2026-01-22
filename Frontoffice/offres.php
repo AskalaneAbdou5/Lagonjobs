@@ -1,6 +1,17 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
-$lesOffres = RecupererLesOffres();
+require_once('../asset/configmysql.php');
+
+
+// RecupererLesOffres
+$sql_rqt ='SELECT o.*, Id_contrat, Id_mode_de_travail, Id_ville From offres o 
+INNER JOIN types_de_contrat ON offres.id_contrat =types_de_contrat.Id
+INNER JOIN mode_de_travail on ';
+
+
+
+$sql = $pdo->prepare($sql_rqt);
+$sql->execute();
+$RecupererLesOffres = $sql->fetchAll();
 
 ?>
 
@@ -71,26 +82,26 @@ $lesOffres = RecupererLesOffres();
       <section class="cards">
 
         <?php
-        if (empty($lesOffres)) {
+        if (empty($RecupererLesOffres)) {
           echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
         } else {
-          foreach ($lesOffres as $offre) {
+          foreach ($RecupererLesOffres as $offre) {
         ?>
         
         <article class="card">
           <p><?= ($offre['Titre']); ?></p> 
                 
-          <h2><?= ($offre['Contrat']); ?></h2>
+          <h2><?= ($offre['Id_contrat']); ?></h2>
                 
-          <p><?= ($offre['Type_de_travail']); ?></p>
+          <p><?= ($offre['Id_mode_de_travail']); ?></p>
                 
           <p><?= ($offre['Description']); ?></p>
 
-          <p><?= ($offre['Ville']); ?></p>
+          <p><?= ($offre['Id_ville']); ?></p>
 
-          <p><?= ($offre['Date_du_debut']); ?></p>
+          <p><?= ($offre['Date_debut']); ?></p>
 
-          <p><?= ($offre['Date_de_fin']); ?></p>
+          <p><?= ($offre['Date_fin']); ?></p>
 
           <form action="details_offres.php" method="get">
               <input type="hidden" name="id_offre" value="0">
@@ -108,7 +119,7 @@ $lesOffres = RecupererLesOffres();
     </div>
 
   </main>
-
+  
 
   <footer class="site-footer footer-inner">
     <p class="container">© 2025 Lagonjobs- Touts droits réservés</p>

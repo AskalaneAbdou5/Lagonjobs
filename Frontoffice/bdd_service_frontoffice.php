@@ -1,5 +1,5 @@
 <?php
-
+/*
 // connexion à la base de donnée
 function connexionBdd()
 {
@@ -37,4 +37,4 @@ function RecupererLaDerniereOffre()
     $sql->execute();
     $sql_resultat = $sql->fetchAll();
     return $sql_resultat;
-}
+}*/
