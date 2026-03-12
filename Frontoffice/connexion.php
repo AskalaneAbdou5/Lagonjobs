@@ -50,7 +50,7 @@ require_once(__DIR__ . '/insert.php');
 
                 <div class="action">
                     <button type="submit" class="btn btn-outline">Se connecter</button> 
-                    <button class="btn" onclick="window.location.href='Inscription.php'">Créer un compte</button>
+                    <button type="button" class="btn" onclick="window.location.href='Inscription.php'">Créer un compte</button>
                 </div>
             </div>
 

@@ -39,7 +39,7 @@ require_once(__DIR__ . '/session.php');
 
   </header>
 
-  <main >
+  <main class="container">
     
     <!--Formullaire-->
       <h1>Postuler</h1>

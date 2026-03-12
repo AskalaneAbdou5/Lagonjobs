@@ -40,10 +40,10 @@ require_once(__DIR__ . '/session.php');
 
   </header>
 
-  <main >
+  <main class="container">
     
     <!--Formullaire-->
-    <div style="padding-left: 2rem;">
+    <div>
       <h1>Contact</h1>
       <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
     </div>

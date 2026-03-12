@@ -74,9 +74,7 @@ if (isset($_GET['id_offre'])){
             </form>
 
             <?php }else{ ?>
-
-                <button class="btn" onclick="window.location.href='connexion.php'">Postuler</button>
-
+                    <button type="button" class="btn" onclick="window.location.href='connexion.php'">Postuler</button>
             <?php } ?>
 
             <button class="btn btn-outline" onclick="window.location.href='offres.php'">Voir d'autres offres</button>

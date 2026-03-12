@@ -67,7 +67,7 @@ require_once(__DIR__ . '/session.php');
                 <div class="action">
                     <div>
                         <button type="submit" class="btn btn-outline">Créer mon compte</button> 
-                        <button class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
+                        <button type="button" class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
                     </div>
                 </div>
             </div>
