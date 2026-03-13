@@ -57,7 +57,7 @@ if (isset($_POST['ville'])){
     }
 }
 
-//MODE DE TRAVAIL
+    //MODE DE TRAVAIL
 
 if (isset($_POST['mode_de_travail'])){
     $mdt=$_POST['mode_de_travail'];
@@ -68,6 +68,9 @@ if (isset($_POST['mode_de_travail'])){
     }
 }
 
+// TRI EN DECROISSANT
+
+$sql .= " ORDER BY of.Id DESC";
 
 //Selection des offres
 

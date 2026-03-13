@@ -45,11 +45,12 @@ require_once(__DIR__ . '/select.php');
                 <section>
                     <h1>Trouver votre stage ou emploi facilement</h1>
                     <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
-                    <form action="offres.php" class="form filter-bar">
-                        <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
+                    
+                    <form action="offres.php" class="form filter-bar" method="post">
+                        <input type="text" name="motcle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
                         <select name="villes" >
-                            <option>Ville</option>
+                            <option value="">Ville</option>
                             <?php for ($i=0; $i < count($villes); $i++) { 
                             echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
                             }?>
@@ -57,13 +58,14 @@ require_once(__DIR__ . '/select.php');
 
  
                         <select name="type_de_contrat" >
-                            <option>Type de contrat</option>
+                            <option value="">Type de contrat</option>
                             <?php for ($i=0; $i < count($categories); $i++) { 
                             echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
                             }?>
                         </select>
 
                         <select name="mode_de_travail" >
+                            <option value="">Mode de travail</option>
                             <?php for ($i=0; $i < count($mode_travail); $i++) { 
                             echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
                             }?>
