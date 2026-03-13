@@ -3,6 +3,8 @@ require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +35,32 @@ require_once(__DIR__ . '/select.php');
 
         <h1>Gestion des Utilisateurs</h1>
 
-        <form action="" class="form filter-bar">
-            <input type="text" name="nom" placeholder="Nom">
-            <input type="text" name="prenom" placeholder="Prénom">
-            <input type="text" name="email" placeholder="Email">
+        <!-- FORMULAIRE DE FILTRAGE -->
+
+        <form action="utilisateurs.php" class="form filter-bar" method="post">
+
+            <!--- figes les elements qui sont rentrer dans les champs -->
+
+            <?php if(isset($_POST['nom'])){ ?>
+                <input type="text" name="nom" placeholder="Nom" value="<?php echo $_POST['nom'] ?>">
+            <?php }else { ?>
+                <input type="text" name="nom" placeholder="Nom">
+            <?php } ?>
+
+            <?php if(isset($_POST['prenom'])){ ?>
+                <input type="text" name="prenom" placeholder="Prénom" value="<?php echo $_POST['prenom'] ?>">
+            <?php }else { ?>
+                <input type="text" name="prenom" placeholder="Prénom">
+            <?php } ?>
+
+            <?php if(isset($_POST['email'])){ ?>
+                <input type="text" name="email" placeholder="Email" value="<?php echo $_POST['email'] ?>">
+            <?php }else { ?>
+                <input type="text" name="email" placeholder="Email">
+            <?php } ?>
 
             <button class="btn btn-outline" >Filtrer</button>
-            <button class="btn btn-outline" >Reinitialiser</button>
+            <button type="button" class="btn btn-outline" onclick="window.location.href='utilisateurs.php'" >Reinitialiser</button>
 
         </form><br>
 

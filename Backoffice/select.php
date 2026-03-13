@@ -46,9 +46,44 @@ $mode_travail=$stmt->fetchall();
 
 //Selection des utilisateurs
 
-$sql = "SELECT * FROM `utilisateurs`";
+$sql = "SELECT * FROM `utilisateurs` WHERE 1=1";
+
+// Filtrage des utilisateurs
+
+$params = []; //permet de stocker les données passées en post
+
+    // Filtre pour les nom
+    
+if (isset($_POST['nom'])){
+    $filtre_nom=$_POST['nom'];
+    
+    $sql.= " AND Nom LIKE :filtre_nom";
+
+    $params['filtre_nom'] = "%".$filtre_nom."%"; //on stock la valeur en post dans params
+}
+
+    // Filtre pour les prenom
+
+if (isset($_POST['prenom'])){
+    $filtre_prenom=$_POST['prenom'];
+    
+    $sql.= " AND Prenom LIKE :filtre_prenom";
+
+    $params['filtre_prenom'] = "%".$filtre_prenom."%"; //on stock la valeur en post dans params
+}
+
+    // Filtre pour les emails
+
+if (isset($_POST['email'])){
+    $filtre_email=$_POST['email'];
+    
+    $sql.= " AND Prenom LIKE :filtre_email";
+
+    $params['filtre_email'] = "%".$filtre_email."%"; //on stock la valeur en post dans params
+}
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute($params);
 $utilisateurs=$stmt->fetchall();
 
 
