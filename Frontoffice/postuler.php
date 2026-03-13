@@ -2,6 +2,12 @@
 session_start();
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/session.php');
+
+//Redirige l'utilisateur dans la page connexion s'il n'est pas connecter
+
+if (!isset($_SESSION['LOG_USER'])) {
+    header("Location: connexion.php");
+}
 ?>
 
 
@@ -11,7 +17,7 @@ require_once(__DIR__ . '/session.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Postuler</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../logo/Logo.png" />
 </head>
