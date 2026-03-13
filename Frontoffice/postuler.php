@@ -25,7 +25,6 @@ require_once(__DIR__ . '/session.php');
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
         <a href="contact.php">Contact</a>
-        
         <?php
         if(!isset($_SESSION['LOG_USER'])){
         ?>
@@ -43,24 +42,14 @@ require_once(__DIR__ . '/session.php');
   <main class="container">
     
     <!--Formullaire-->
-    <div>
-      <h1>Contact</h1>
-      <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
-    </div>
+      <h1>Postuler</h1>
 
       <form action="contact.html" method="POST" class="form">
         
         <div class="stack">
-          <div class="row">
-            <div>
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" required>
-            </div>
-
-            <div>
-              <label for="email">Email</label>
-              <input type="text" name="email" required>
-            </div>
+          <div class="stack">
+            <label for="dest_email">Destinataire</label>
+            <input type="email" name="dest_email">
           </div>
 
           <div class="stack">
@@ -77,7 +66,6 @@ require_once(__DIR__ . '/session.php');
 
           <div class="action">
             <button type="submit" class="btn">Envoyez</button>
-            <button type="reset" class="btn btn-outline">Effacer</button>
           </div>
         </div>
 

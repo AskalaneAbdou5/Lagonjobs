@@ -32,7 +32,17 @@ require_once(__DIR__ . '/select.php');
 
         <h1>Gestion des Utilisateurs</h1>
 
-        <table border="2px">
+        <form action="" class="form filter-bar">
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="prenom" placeholder="Prénom">
+            <input type="text" name="email" placeholder="Email">
+
+            <button class="btn btn-outline" >Filtrer</button>
+            <button class="btn btn-outline" >Reinitialiser</button>
+
+        </form><br>
+
+        <table class="table-offres">
             <tr>
                 <th>Utilisateurs</th>
                 <th>Emails</th>

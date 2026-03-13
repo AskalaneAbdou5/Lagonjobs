@@ -1,17 +1,29 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/session.php');
+require_once(__DIR__ . '/select.php');
 
+//Verifier si les données en post existe
 
-// RecupererLesOffres
-$sql_rqt ='SELECT o.*, Id_contrat, Id_mode_de_travail, Id_ville From offres o 
-INNER JOIN types_de_contrat ON offres.id_contrat =types_de_contrat.Id
-INNER JOIN mode_de_travail on ';
+  //Le type de contrat
 
+if (isset($_POST['type_de_contrat'])){
+  $contrat=$_POST['type_de_contrat'];
+}
 
+  //La ville 
 
-$sql = $pdo->prepare($sql_rqt);
-$sql->execute();
-$RecupererLesOffres = $sql->fetchAll();
+if (isset($_POST['ville'])){
+  $ville=$_POST['ville'];
+}
+
+  //Le mode de travail
+
+if (isset($_POST['mode_de_travail'])){
+  $mdt=$_POST['mode_de_travail'];
+}
+
 
 ?>
 
@@ -36,8 +48,16 @@ $RecupererLesOffres = $sql->fetchAll();
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
         <a href="contact.php">Contact</a>
-        <a href="connexion.php" class="btn btn-outline">Connexion</a>
-        <a href="inscription.php" class="btn btn-outline">Inscription</a>
+        <?php
+        if(!isset($_SESSION['LOG_USER'])){
+        ?>
+            <button class="btn btn-outline" onclick="window.location.href='connexion.php'">Connexion</button>
+            <button class="btn" onclick="window.location.href='inscription.php'">Inscription</button>
+        <?php }else{ ?>
+
+            <button class="btn" onclick="window.location.href='deconnexion.php'">Deconnexion</button>
+
+        <?php } ?>
     </nav>
 
   </header>
@@ -49,28 +69,61 @@ $RecupererLesOffres = $sql->fetchAll();
       <h1>Offres d'emploi & stages</h1>
 
       <!--Formilaire de filtrage-->
-        <form action="offres.php" method="POST" class="form cards search-inline">
-            <input type="text" name="motcle" placeholder="Mot-clé">
-            
+        <form action="offres.php" method="POST" class="form filter-bar">
+            <?php if (!isset($_POST['motcle'])){ ?>
+              <input type="text" name="motcle" placeholder="Mot-clé">
+            <?php }else { ?>
+              <input type="text" name="motcle" placeholder="Mot-clé" value="<?php echo $_POST['motcle'] ?>">
+            <?php } ?>
+
             <select name="type_de_contrat" >
-              <option value="0">Stage</option>
-              <option value="1">CDD</option>
-              <option value="2">CDI</option>
+                <option value="">Type de contrat</option>
+                <?php for ($i=0; $i < count($categories); $i++) { 
+
+                  //Fige le type de contrat si l'id du type de contrat en post correspond l'id du type de contrat de la base 
+
+                  if ($contrat != $categories[$i]['Id']){
+                    echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+                  }else{
+                    echo "<option value=".$categories[$i]['Id']." selected>".$categories[$i]['Contrat']."</option>";
+                  }
+
+                }?>
+
             </select>
 
             <select name="ville" >
-              <option value="0">Mamoudzou</option>
-              <option value="1">Dzaoudzi</option>
-              <option value="2">Koungou</option>
+                <option value="">Ville</option>
+                <?php for ($i=0; $i < count($villes); $i++) { 
+
+                  //Fige la ville si l'id de la ville en post correspond l'id de la ville de la base
+
+                  if ($ville != $villes[$i]['Id']){
+                    echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
+                  }else{
+                    echo "<option value=".$villes[$i]['Id']." selected>".$villes[$i]['Nom_ville']."</option>";
+                  }
+
+                }?>
             </select>
 
-            <select name="Télétravail" >
-              <option value="0">Hybride</option>
-              <option value="1">Sur site</option>
+            <select name="mode_de_travail" >
+              <option value="">Mode de travail</option>
+                <?php for ($i=0; $i < count($mode_travail); $i++) {
+
+                  //Fige le mode de travail si l'id du mode de travail en post correspond l'id du mode de travail de la base
+
+                  if ($mdt != $mode_travail[$i]['Id']){
+                    echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
+                  }else{
+                    echo "<option value=".$mode_travail[$i]['Id']." selected>".$mode_travail[$i]['Mode_de_travail']."</option>";
+                  }
+
+                }?>
             </select>
 
             <button type="submit" class="btn">Filtrer</button>
-            <input class="btn-outline" type="submit" value="Réinitialiser">
+            <input class="btn-outline" type="button" onclick="window.location.href='offres.php'" value="Réinitialiser">
         </form> <br>
 
       <hr>
@@ -82,37 +135,30 @@ $RecupererLesOffres = $sql->fetchAll();
       <section class="cards">
 
         <?php
-        if (empty($RecupererLesOffres)) {
-          echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
-        } else {
-          foreach ($RecupererLesOffres as $offre) {
+        for ($i=0; $i < count($offres); $i++) {
         ?>
         
         <article class="card">
-          <p><?= ($offre['Titre']); ?></p> 
-                
-          <h2><?= ($offre['Id_contrat']); ?></h2>
-                
-          <p><?= ($offre['Id_mode_de_travail']); ?></p>
-                
-          <p><?= ($offre['Description']); ?></p>
+          <p class="badge"><?php echo $offres[$i]['Contrat']; ?></p> 
+                  
+          <h2><?php echo $offres[$i]['Titre']; ?></h2>
+                  
+          <p><?php echo $offres[$i]['Mode_de_travail']; ?></p>
+                  
+          <p><?php echo $offres[$i]['Description']; ?></p>
 
-          <p><?= ($offre['Id_ville']); ?></p>
+          <p><?php echo $offres[$i]['Nom_ville']; ?></p>
 
-          <p><?= ($offre['Date_debut']); ?></p>
-
-          <p><?= ($offre['Date_fin']); ?></p>
 
           <form action="details_offres.php" method="get">
-              <input type="hidden" name="id_offre" value="0">
-              <button type="submit" class="btn btn-outline">Voir</button>
+              <input type="hidden" name="id_offre" value="<?php echo $i?>">
+              <button type="submit" class="btn btn-outline">Détails</button>
           </form>
                 
         </article>
 
         <?php 
           }
-        } 
         ?>
 
       </section>

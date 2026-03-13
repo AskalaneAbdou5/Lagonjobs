@@ -1,8 +1,9 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.php');
-
+session_start();
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/session.php');
+   
 ?>
-
 
 
 
@@ -30,12 +31,13 @@ require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.
         
         <h1> Inscription </h1>
 
-        <form action="connexion.php" class="form row auth-card">
+        <form action="connexion.php" class="form row auth-card" method="get">
 
+            <div class="stack">
                 <div class="row">
                     <div>
                         <label >Prénom</label>         
-                        <input type="text" name="nom" required>
+                        <input type="text" name="prenom" required>
                     </div>
 
                     <div>
@@ -59,13 +61,13 @@ require_once(dirname(dirname(__FILE__)) . '/Frontoffice/bdd_service_frontoffice.
 
                     <div>
                         <label>Confirmer le mot de passe</label>          
-                        <input type="password" name="password" required>
+                        <input type="password" name="re_password" required>
                     </div>
                 </div>
                 <div class="action">
                     <div>
                         <button type="submit" class="btn btn-outline">Créer mon compte</button> 
-                        <a href="connexion.html" class="btn">Déjà inscrit?</a>
+                        <button type="button" class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
                     </div>
                 </div>
             </div>

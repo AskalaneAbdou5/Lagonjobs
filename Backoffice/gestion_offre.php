@@ -33,7 +33,7 @@ require_once(__DIR__ . '/select.php');
     <main class="container">
         <h1>Gestion des emploies</h1><br>
 
-        <form action="" class="form cards search-inline">
+        <form action="" class="form filter-bar">
             <input type="text" name="titre" placeholder="Titre">
 
             <select name="status" >
@@ -55,7 +55,7 @@ require_once(__DIR__ . '/select.php');
 
         </form><br>
 
-        <table border="2px">
+        <table class="table-offres">
             <tr>
                 <th>Titre</th>
                 <th>Statut</th>
@@ -79,7 +79,6 @@ require_once(__DIR__ . '/select.php');
                         <input type="hidden" name="update_description" value="<?php echo $offres[$i]['Description'];?>">
                         <button class="btn btn-outline" type="submit">Modifier</button>
                     </form>
-
                     <form action="gestion_offre.php" method="get">
                         <input type="hidden" name="delete_offre" value="<?php echo $offres[$i]['Id'] ?>">
                         <button class="btn btn-outline">Supprimer</button>

@@ -29,7 +29,7 @@ require_once(__DIR__ . '/select.php');
 
     <main class="container">
         
-        <h1>Creation d'emploie</h1><br>
+        <h1>Creation d'offre</h1><br>
 
         <form action="gestion_offre.php" method="get" class="form">
 

@@ -1,19 +1,8 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
-
-//Recuperer les 3 dernières offres
-
-$sql_rqt ='SELECT offres.*, Id_contrat AS ct, Id_mode_de_travail AS mt, Id_ville AS v
-FROM offres
-INNER JOIN types_de_contrat ON offres.Id = types_de_contrat.Id
-INNER JOIN modes_de_travail ON offres.Id = modes_de_travail.Id
-INNER JOIN villes ON offres.Id = villes.Id
-ORDER BY offres.Id DESC LIMIT 3';
-$sql = $pdo->prepare($sql_rqt);
-$sql->execute();
-$dernières_offres = $sql->fetchAll();
-
-
+require_once(__DIR__ . '/session.php');
+require_once(__DIR__ . '/select.php');
 ?>
 
  
@@ -34,8 +23,17 @@ $dernières_offres = $sql->fetchAll();
             <a href="index.php">Accueil</a>
             <a href="offres.php">Offres</a>
             <a href="contact.php">Contact</a>
-            <a href="connexion.php" class="btn btn-outline">Connexion</a>
-            <a href="inscription.php" class="btn btn-outline">Inscription</a>
+            <?php
+            if(!isset($_SESSION['LOG_USER'])){
+            ?>
+                <button class="btn btn-outline" onclick="window.location.href='connexion.php'">Connexion</button>
+                <button class="btn" onclick="window.location.href='inscription.php'">Inscription</button>
+            <?php }else{ ?>
+
+                <button class="btn" onclick="window.location.href='deconnexion.php'">Deconnexion</button>
+
+            <?php } ?>
+
         </nav>
 
 
@@ -47,22 +45,28 @@ $dernières_offres = $sql->fetchAll();
                 <section>
                     <h1>Trouver votre stage ou emploi facilement</h1>
                     <p>Des offres claires et à jour, pour étudiants et jeunes diplômes. Recherche par mot clé, lieu, type de contrât et teletravail.</p>
-                    <form action="offres.php" class="form cards search-inline">
+                    <form action="offres.php" class="form filter-bar">
                         <input type="text" name="mot_cle" placeholder="Mot cle (ex: PHP, support, réseau)">
 
-                        <input type="text" name="ville" placeholder=" Ville (ex: Mamoudzou)">
-
-                        <select name="type_de_contrat" >
-                            <option value="0">Type de contrat</option>
-                            <option value="1">Stage</option>
-                            <option value="2">CDD</option>
-                            <option value="3">CDI</option>
+                        <select name="villes" >
+                            <option>Ville</option>
+                            <?php for ($i=0; $i < count($villes); $i++) { 
+                            echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
+                            }?>
                         </select>
 
+ 
                         <select name="type_de_contrat" >
-                            <option value="0">Télétravail</option>
-                            <option value="1">Hybride</option>
-                            <option value="2">Sur site</option>
+                            <option>Type de contrat</option>
+                            <?php for ($i=0; $i < count($categories); $i++) { 
+                            echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+                            }?>
+                        </select>
+
+                        <select name="mode_de_travail" >
+                            <?php for ($i=0; $i < count($mode_travail); $i++) { 
+                            echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
+                            }?>
                         </select>
 
                         <button type="submit" class="btn">Rechercher</button>
@@ -87,36 +91,28 @@ $dernières_offres = $sql->fetchAll();
             <section class="cards">
 
                 <?php
-                if (empty($dernières_offres)) {
-                echo '<p>Desolé aucune offre disponible dans la base de donner pour le moment.</p>';
-                } else {
-                foreach ($dernières_offres as $offre) {
+                for ($i=0; $i < 3; $i++) {
                 ?>
                 
                 <article class="card">
-                    <p><?= ($offre['Titre']); ?></p> 
+                    <p class="badge"><?php echo $offres[$i]['Contrat']; ?></p> 
                             
-                    <h2><?= ($offre['Id_contrat']); ?></h2>
+                    <h2><?php echo $offres[$i]['Titre']; ?></h2>
                             
-                    <p><?= ($offre['Id_mode_de_travail']); ?></p>
+                    <p><?php echo $offres[$i]['Mode_de_travail']; ?></p>
                             
-                    <p><?= ($offre['Description']); ?></p>
+                    <p><?php echo $offres[$i]['Description']; ?></p>
 
-                    <p><?= ($offre['Id_ville']); ?></p>
-
-                    <p><?= ($offre['Date_debut']); ?></p>
-
-                    <p><?= ($offre['Date_fin']); ?></p>
+                    <p><?php echo $offres[$i]['Nom_ville']; ?></p>
 
                     <form action="details_offres.php" method="get">
-                        <input type="hidden" name="id_offre" value="0">
-                        <button type="submit" class="btn btn-outline">Voir</button>
+                        <input type="hidden" name="id_offre" value="<?php echo $i?>">
+                        <button type="submit" class="btn btn-outline">Détails</button>
                     </form>
                         
                 </article>
 
                 <?php 
-                }
                 } 
                 ?>
 
