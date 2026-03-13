@@ -26,17 +26,17 @@ if (isset($_POST['update_id'])
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier l'emploi</title>
+    <title>Modifier l'offre</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <h1>Modifier l'emploi</h1>
+<body class="container">
+    <h1>Modifier l'offre</h1>
 
     <form action="gestion_offre.php" method="POST" class="form">
         <div class="stack">
             <div class="stack">
                 <div>
-                    <input type="hidden" name="updated_id" value="<?php echo $id_emploie;?>">
+                    <input type="hidden" name="updated_id_offre" value="<?php echo $id_emploie;?>">
                 </div>
 
                 <div>
@@ -79,7 +79,7 @@ if (isset($_POST['update_id'])
             </div>
 
             <div class="action">
-                <a href="gestion_offre.php" class="btn btn-outline">Annuler</a>
+                <button type="button" onclick="window.location.href='gestion_offre.php'" class="btn btn-outline">Annuler</button>
                 <button type="submit" class="btn">Enregistrer</button>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/delete.php');
+require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
 ?>
 
@@ -54,7 +55,16 @@ require_once(__DIR__ . '/select.php');
                 <td><?php echo $utilisateurs[$i]['Nom']." ".$utilisateurs[$i]['Prenom'];?></td>
                 <td><?php echo $utilisateurs[$i]['Email'];?></td>
                 <td>
-                    </button><form action="utilisateurs.php" method="get">
+
+                    <form action="update_utilisateur.php" method="post">
+                        <input type="hidden" name="update_id_user" value="<?php echo $utilisateurs[$i]['Id'];?>">
+                        <input type="hidden" name="update_nom" value="<?php echo $utilisateurs[$i]['Nom'];?>">
+                        <input type="hidden" name="update_prenom" value="<?php echo $utilisateurs[$i]['Prenom'];?>">
+                        <input type="hidden" name="update_email" value="<?php echo $utilisateurs[$i]['Email'];?>">
+                        <button class="btn btn-outline" type="submit">Modifier</button>
+                    </form>
+
+                    <form action="utilisateurs.php" method="get">
                         <input type="hidden" name="delete_user" value="<?php echo $utilisateurs[$i]['Id'] ?>">
                         <button class="btn btn-outline">Supprimer</button>
                     </form> 

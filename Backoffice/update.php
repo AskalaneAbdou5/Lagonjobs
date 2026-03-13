@@ -1,6 +1,8 @@
 <?php 
 
-if(isset($_POST['updated_id']) && 
+// MODIFIER UN OFFRE
+
+if(isset($_POST['updated_id_offre']) && 
 isset($_POST['updated_titre']) && 
 isset($_POST['updated_descript']) && 
 isset($_POST['updated_id_status']) &&
@@ -20,5 +22,28 @@ isset($_POST['updated_id_contrat'])){
         'id_status'=>$status,
         'id_contrat'=>$contrat,
         'descript'=>$description
+    ]);
+}
+
+//MODIFIER UN UTILISATEUR
+
+
+if(isset($_POST['updated_id_user']) && 
+isset($_POST['updated_nom']) && 
+isset($_POST['updated_prenom']) && 
+isset($_POST['updated_email'])){
+
+    $id_user=$_POST['updated_id_user'];
+    $nom=$_POST['updated_nom'];
+    $prenom=$_POST['updated_prenom'];
+    $email=$_POST['updated_email'];
+
+    $sql = "UPDATE utilisateurs SET Nom=:nom, Prenom=:prenom, email=:email WHERE Id=:id_user";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        'id_user'=>$id_user,
+        'nom'=>$nom,
+        'prenom'=>$prenom,
+        'email'=>$email
     ]);
 }
