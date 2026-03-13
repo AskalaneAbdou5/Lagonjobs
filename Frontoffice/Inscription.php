@@ -37,26 +37,26 @@ require_once(__DIR__ . '/session.php');
                 <div class="row">
                     <div>
                         <label >Prénom</label>         
-                        <input type="text" name="prenom" required>
+                        <input type="text" name="insert_prenom" required>
                     </div>
 
                     <div>
                         <label>Nom</label>
-                        <input type="text" name="nom" required>
+                        <input type="text" name="insert_nom" required>
                     </div>
                 </div>
 
                 <div class="stack">
                     <div>
                         <label>Email</label>         
-                        <input type="email" name="email" required>
+                        <input type="email" name="insert_email" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div>
                         <label>Mot De Passe</label>         
-                        <input type="password" name="password" required>
+                        <input type="password" name="insert_password" required>
                     </div>
 
                     <div>
