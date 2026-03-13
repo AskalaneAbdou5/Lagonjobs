@@ -68,16 +68,15 @@ if (isset($_GET['id_offre'])){
 
             <?php if (isset($_SESSION['LOG_USER'])){ ?>
 
-            <form action="postuler.php">
-                <input type="hidden" name="id_offre" value="<?php $id_offre ?>">
+
+
                 <button class="btn" type="submit">Postuler</button>
-            </form>
+                
+                <?php }else{ ?>
+                        <button class="btn" onclick="window.location.href='connexion.php'">Postuler</button>
+                <?php } ?>
 
-            <?php }else{ ?>
-                    <button type="button" class="btn" onclick="window.location.href='connexion.php'">Postuler</button>
-            <?php } ?>
-
-            <button class="btn btn-outline" onclick="window.location.href='offres.php'">Voir d'autres offres</button>
+                <button class="btn btn-outline" onclick="window.location.href='offres.php'">Voir d'autres offres</button>
 
         </article>
 

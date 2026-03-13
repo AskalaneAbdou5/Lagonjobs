@@ -17,10 +17,65 @@ JOIN status st ON of.Id_status=st.Id
 JOIN types_de_contrat tdc ON of.Id_contrat=tdc.Id
 JOIN villes vil ON of.Id_ville=vil.Id
 JOIN modes_de_travail mdt ON of.Id_mode_de_travail=mdt.Id 
-ORDER BY of.Id DESC";
+WHERE 1=1 
+";
+
+// Filtrage des données 
+
+$params = []; //permet de stocker les données passées en post
+
+    //MOT CLÉ
+
+
+if (isset($_POST['motcle'])){
+    $motcle=$_POST['motcle'];
+    
+    $sql.= " AND of.Titre LIKE :motcle";
+
+    $params['motcle'] = "%".$motcle."%"; //on stock la valeur en post dans params
+}
+
+    //CONTRATs
+
+if (isset($_POST['type_de_contrat'])){
+    $contrat=$_POST['type_de_contrat'];
+    if ($contrat != ""){
+        $sql.= " AND of.Id_contrat= :contrat";
+
+        $params['contrat'] = $contrat;
+    }
+}
+
+    //VILLEs
+
+if (isset($_POST['ville'])){
+    $ville=$_POST['ville'];
+    if ($ville != ""){
+        $sql.= " AND of.Id_ville= :ville";
+
+        $params['ville'] = $ville;
+    }
+}
+
+//MODE DE TRAVAIL
+
+if (isset($_POST['mode_de_travail'])){
+    $mdt=$_POST['mode_de_travail'];
+    if ($mdt != ""){
+        $sql.= " AND of.Id_mode_de_travail= :mdt";
+
+        $params['mdt'] = $mdt;
+    }
+}
+
+
+//Selection des offres
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute($params);
 $offres=$stmt->fetchall();
+
+
 
 //Selection des utilisateurs
 

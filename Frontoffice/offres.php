@@ -4,6 +4,27 @@ require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/session.php');
 require_once(__DIR__ . '/select.php');
 
+//Verifier si les données en post existe
+
+  //Le type de contrat
+
+if (isset($_POST['type_de_contrat'])){
+  $contrat=$_POST['type_de_contrat'];
+}
+
+  //La ville 
+
+if (isset($_POST['ville'])){
+  $ville=$_POST['ville'];
+}
+
+  //Le mode de travail
+
+if (isset($_POST['mode_de_travail'])){
+  $mdt=$_POST['mode_de_travail'];
+}
+
+
 ?>
 
 
@@ -49,30 +70,60 @@ require_once(__DIR__ . '/select.php');
 
       <!--Formilaire de filtrage-->
         <form action="offres.php" method="POST" class="form filter-bar">
-            <input type="text" name="motcle" placeholder="Mot-clé">
-            
+            <?php if (!isset($_POST['motcle'])){ ?>
+              <input type="text" name="motcle" placeholder="Mot-clé">
+            <?php }else { ?>
+              <input type="text" name="motcle" placeholder="Mot-clé" value="<?php echo $_POST['motcle'] ?>">
+            <?php } ?>
+
             <select name="type_de_contrat" >
-                <option>Type de contrat</option>
+                <option value="">Type de contrat</option>
                 <?php for ($i=0; $i < count($categories); $i++) { 
-                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+
+                  //Fige le type de contrat si l'id du type de contrat en post correspond l'id du type de contrat de la base 
+
+                  if ($contrat != $categories[$i]['Id']){
+                    echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+                  }else{
+                    echo "<option value=".$categories[$i]['Id']." selected>".$categories[$i]['Contrat']."</option>";
+                  }
+
                 }?>
+
             </select>
 
-            <select name="villes" >
-                <option>Ville</option>
+            <select name="ville" >
+                <option value="">Ville</option>
                 <?php for ($i=0; $i < count($villes); $i++) { 
-                echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
+
+                  //Fige la ville si l'id de la ville en post correspond l'id de la ville de la base
+
+                  if ($ville != $villes[$i]['Id']){
+                    echo "<option value=".$villes[$i]['Id'].">".$villes[$i]['Nom_ville']."</option>";
+                  }else{
+                    echo "<option value=".$villes[$i]['Id']." selected>".$villes[$i]['Nom_ville']."</option>";
+                  }
+
                 }?>
             </select>
 
             <select name="mode_de_travail" >
-                <?php for ($i=0; $i < count($mode_travail); $i++) { 
-                echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
+              <option value="">Mode de travail</option>
+                <?php for ($i=0; $i < count($mode_travail); $i++) {
+
+                  //Fige le mode de travail si l'id du mode de travail en post correspond l'id du mode de travail de la base
+
+                  if ($mdt != $mode_travail[$i]['Id']){
+                    echo "<option value=".$mode_travail[$i]['Id'].">".$mode_travail[$i]['Mode_de_travail']."</option>";
+                  }else{
+                    echo "<option value=".$mode_travail[$i]['Id']." selected>".$mode_travail[$i]['Mode_de_travail']."</option>";
+                  }
+
                 }?>
             </select>
 
             <button type="submit" class="btn">Filtrer</button>
-            <input class="btn-outline" type="submit" value="Réinitialiser">
+            <input class="btn-outline" type="button" onclick="window.location.href='offres.php'" value="Réinitialiser">
         </form> <br>
 
       <hr>
