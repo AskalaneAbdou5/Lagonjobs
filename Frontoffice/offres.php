@@ -4,7 +4,7 @@ require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/session.php');
 require_once(__DIR__ . '/select.php');
 
-//Verifier si les données en post existe
+//Verifier si les données du filtrage en post existe
 
   //Le type de contrat
 

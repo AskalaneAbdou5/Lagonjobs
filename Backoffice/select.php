@@ -10,8 +10,47 @@ ctr.Contrat,
 st.Status FROM offres of
 JOIN status st ON of.Id_status=st.Id
 JOIN types_de_contrat ctr ON of.Id_contrat=ctr.Id";
+
+// Filtrage des offres
+
+$params = []; //permet de stocker les données passées en post
+
+    // Filtre avec le titre
+    
+if (isset($_POST['titre'])){
+    $filtre_titre=$_POST['titre'];
+    
+    $sql.= " AND of.Titre LIKE :filtre_titre";
+
+    $params['filtre_titre'] = "%".$filtre_titre."%"; //on stock la valeur en post dans params
+}
+
+
+    // Filtre avec le status
+
+if (isset($_POST['status'])){
+    $filtre_status=$_POST['status'];
+    if ($filtre_status != ""){
+        $sql.= " AND of.Id_status= :filtre_status";
+
+        $params['filtre_status'] = $filtre_status;
+    }
+}
+
+    // Filtre avec le type de contrat
+
+if (isset($_POST['categorie'])){
+    $filtre_contrat=$_POST['categorie'];
+    if ($filtre_contrat != ""){
+        $sql.= " AND of.Id_contrat= :filtre_contrat";
+
+        $params['filtre_contrat'] = $filtre_contrat;
+    }
+}
+
+
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+$stmt->execute($params);
 $offres=$stmt->fetchall();
 
 //Selection des status
@@ -44,7 +83,7 @@ $stmt->execute();
 $mode_travail=$stmt->fetchall();
 
 
-//Selection des utilisateurs
+
 
 $sql = "SELECT * FROM `utilisateurs` WHERE 1=1";
 
@@ -52,7 +91,7 @@ $sql = "SELECT * FROM `utilisateurs` WHERE 1=1";
 
 $params = []; //permet de stocker les données passées en post
 
-    // Filtre pour les nom
+    // Filtre avec le nom
     
 if (isset($_POST['nom'])){
     $filtre_nom=$_POST['nom'];
@@ -62,7 +101,7 @@ if (isset($_POST['nom'])){
     $params['filtre_nom'] = "%".$filtre_nom."%"; //on stock la valeur en post dans params
 }
 
-    // Filtre pour les prenom
+    // Filtre avec le prenom
 
 if (isset($_POST['prenom'])){
     $filtre_prenom=$_POST['prenom'];
@@ -72,7 +111,7 @@ if (isset($_POST['prenom'])){
     $params['filtre_prenom'] = "%".$filtre_prenom."%"; //on stock la valeur en post dans params
 }
 
-    // Filtre pour les emails
+    // Filtre avec l'email
 
 if (isset($_POST['email'])){
     $filtre_email=$_POST['email'];
@@ -81,6 +120,8 @@ if (isset($_POST['email'])){
 
     $params['filtre_email'] = "%".$filtre_email."%"; //on stock la valeur en post dans params
 }
+
+//Selection des utilisateurs
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);

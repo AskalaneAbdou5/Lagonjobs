@@ -4,6 +4,22 @@ require_once(__DIR__ . '/insert.php');
 require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
+
+
+//Verifier si les données du filtrage en post existe
+
+  //Le status
+
+if (isset($_POST['status'])){
+  $status_filter=$_POST['status'];
+}
+
+  //Le type de contrat
+
+if (isset($_POST['categorie'])){
+  $contrat_filter=$_POST['categorie'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,25 +49,50 @@ require_once(__DIR__ . '/select.php');
     <main class="container">
         <h1>Gestion des emploies</h1><br>
 
-        <form action="" class="form filter-bar">
-            <input type="text" name="titre" placeholder="Titre">
+        <!-- FORMULAIRE DE FILTRAGE -->
+
+        <form action="gestion_offre.php" class="form filter-bar" method="post">
+
+            <!--- figes les elements qui sont rentrer dans les champs -->
+
+            <?php if(isset($_POST['titre'])){ ?>
+                <input type="text" name="titre" placeholder="Titre" value="<?php echo $_POST['titre'] ?>">
+            <?php }else { ?>
+                <input type="text" name="titre" placeholder="Titre">
+            <?php } ?>
 
             <select name="status" >
-                <option>Status</option>
+                <option value="">Status</option>
                 <?php for ($i=0; $i < count($status); $i++) { 
-                echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+     
+                  //Fige le status si l'id du status en post correspond l'id du status de la base 
+
+                  if ($status_filter != $status[$i]['Id']){
+                    echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+                  }else{
+                    echo "<option value=".$status[$i]['Id']." selected>".$status[$i]['Status']."</option>";
+                  }
+
                 }?>
             </select>
 
             <select name="categorie" >
-                <option>Catégorie</option>
+                <option value="">Catégorie</option>
                 <?php for ($i=0; $i < count($categories); $i++) { 
-                echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+
+                  //Fige le type de contrat si l'id du type de contrat en post correspond l'id du type de contrat de la base 
+
+                  if ($contrat_filter != $categories[$i]['Id']){
+                    echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";
+                  }else{
+                    echo "<option value=".$categories[$i]['Id']." selected>".$categories[$i]['Contrat']."</option>";
+                  }
+
                 }?>
             </select>
 
             <button class="btn btn-outline" >Filtrer</button>
-            <button class="btn btn-outline" >Reinitialiser</button>
+            <button type="button" class="btn btn-outline" onclick="window.location.href='gestion_offre.php'" >Reinitialiser</button>
 
         </form><br>
 
