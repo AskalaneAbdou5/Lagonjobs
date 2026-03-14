@@ -1,9 +1,17 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
+require_once('../Frontoffice/session.php');
 require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/insert.php');
 require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
+
+//Redirige l'administrateur dans la page connexion s'il n'est pas connecter
+
+if (!isset($_SESSION['LOG_ADMIN'])) {
+    header("Location: ../Frontoffice/connexion.php");
+}
 
 //Verifier si les données du filtrage en post existe
 
@@ -35,6 +43,13 @@ if (isset($_POST['role_user'])){
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
         <a href="utilisateurs.php">Utilisateur</a>
+
+        <?php if(isset($_SESSION['LOG_ADMIN'])){ ?>
+
+          <button class="btn" onclick="window.location.href='../Frontoffice/deconnexion.php'">Deconnexion</button>
+
+        <?php } ?>
+
     </nav>
 
   </header>

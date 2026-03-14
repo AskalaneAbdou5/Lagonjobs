@@ -35,7 +35,7 @@ if (isset($_POST['motcle'])){
     $params['motcle'] = "%".$motcle."%"; //on stock la valeur en post dans params
 }
 
-    //CONTRATs
+    //TYPE DE CONTRATS
 
 if (isset($_POST['type_de_contrat'])){
     $contrat=$_POST['type_de_contrat'];
@@ -46,7 +46,7 @@ if (isset($_POST['type_de_contrat'])){
     }
 }
 
-    //VILLEs
+    //VILLES
 
 if (isset($_POST['ville'])){
     $ville=$_POST['ville'];

@@ -1,17 +1,17 @@
 <?php
-if (isset($_GET['insert_prenom']) && isset($_GET['insert_nom']) && isset($_GET['insert_email']) && isset($_GET['insert_password']) && isset($_GET['re_password'])) {
+if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POST['insert_email']) && isset($_POST['insert_password']) && isset($_POST['re_password'])) {
 
-    $Prenom=$_GET['insert_prenom'];
-    $Nom=$_GET['insert_nom'];
-    $Email=$_GET['insert_email'];
-    $Motdepasse=$_GET['insert_password'];
-    $Remotdepasse=$_GET['re_password'];
+    $Prenom=$_POST['insert_prenom'];
+    $Nom=$_POST['insert_nom'];
+    $Email=$_POST['insert_email'];
+    $Motdepasse=$_POST['insert_password'];
+    $Remotdepasse=$_POST['re_password'];
 
     //Ajout d'un utilisateur si les mots de passes sont identique
 
     if ($Motdepasse === $Remotdepasse) {
 
-        $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES(:nom, :prenom, :email, :mdp ,2)"; 
+        $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES(:nom, :prenom, :email, :mdp ,1)"; 
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'nom' => $Nom,

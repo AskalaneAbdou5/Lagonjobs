@@ -1,6 +1,15 @@
 <?php
+session_start();
 require_once('../asset/configmysql.php');
+require_once('../Frontoffice/session.php');
 require_once(__DIR__ . '/select.php');
+
+//Redirige l'administrateur dans la page connexion s'il n'est pas connecter
+
+if (!isset($_SESSION['LOG_ADMIN'])) {
+    header("Location: ../Frontoffice/connexion.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +32,13 @@ require_once(__DIR__ . '/select.php');
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
         <a href="utilisateurs.php">Utilisateur</a>
+
+        <?php if(isset($_SESSION['LOG_ADMIN'])){ ?>
+
+          <button class="btn" onclick="window.location.href='../Frontoffice/deconnexion.php'">Deconnexion</button>
+
+        <?php } ?>
+
     </nav>
 
   </header>

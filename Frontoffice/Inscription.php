@@ -31,7 +31,7 @@ require_once(__DIR__ . '/session.php');
         
         <h1> Inscription </h1>
 
-        <form action="connexion.php" class="form row auth-card" method="get">
+        <form action="connexion.php" class="form row auth-card" method="post">
 
             <div class="stack">
                 <div class="row">

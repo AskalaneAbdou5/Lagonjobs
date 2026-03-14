@@ -18,7 +18,7 @@ require_once(__DIR__ . '/insert.php');
 <body>
     <header class="site-header header-inner"> 
 
-    <span class="logo"><a href="index.html">Lagon</a>jobs</span>
+    <span class="logo"><a href="session.html">Lagon</a>jobs</span>
     <nav class="nav">
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
@@ -31,18 +31,18 @@ require_once(__DIR__ . '/insert.php');
 
         <h1>Connexion</h1>
 
-        <form action="index.php" class="form row auth-card" method="get">
+        <form action="connexion.php" class="form row auth-card" method="POST">
 
             <div class="stack">
                 <div class="stack">
                     <div>
                         <label>Email</label>         
-                        <input type="email" name="email" required>
+                        <input type="email" name="log_email" required>
                     </div>
 
                     <div>
                         <label>Mot de passe</label>         
-                        <input type="password" name="password" required>
+                        <input type="password" name="log_password" required>
                     </div>
                 </div>
                 
