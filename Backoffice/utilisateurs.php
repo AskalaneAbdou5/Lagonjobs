@@ -1,9 +1,17 @@
 <?php
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/delete.php');
+require_once(__DIR__ . '/insert.php');
 require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/select.php');
 
+//Verifier si les données du filtrage en post existe
+
+  //Le role
+
+if (isset($_POST['role_user'])){
+  $role_filter=$_POST['role_user'];
+}
 
 ?>
 
@@ -35,6 +43,30 @@ require_once(__DIR__ . '/select.php');
 
         <h1>Gestion des Utilisateurs</h1>
 
+        <h3>Ajouter un utilisateur</h3>
+
+        <form action="utilisateurs.php" class="form filter-bar" method="post">
+  
+            <input type="text" name="insert_nom" placeholder="Nom">
+           
+            <input type="text" name="insert_prenom" placeholder="Prénom" >
+         
+            <input type="email" name="insert_email" placeholder="Email" >
+
+            <input type="password" name="insert_password" placeholder="Mot de passe" >
+
+            <select name="insert_role_user" >
+                <?php for ($i=0; $i < count($roles); $i++) { 
+                    echo "<option value=".$roles[$i]['Id'].">".$roles[$i]['Nom_role']."</option>";
+                }?>
+            </select>
+
+            <button type="submit" class="btn btn-outline" >Ajouter</button>
+        
+        </form><br>
+
+        <h3>Filtrer les utilisateurs</h3>
+
         <!-- FORMULAIRE DE FILTRAGE -->
 
         <form action="utilisateurs.php" class="form filter-bar" method="post">
@@ -59,7 +91,19 @@ require_once(__DIR__ . '/select.php');
                 <input type="text" name="email" placeholder="Email">
             <?php } ?>
 
-            <button class="btn btn-outline" >Filtrer</button>
+            <select name="role_user" >
+                <?php for ($i=0; $i < count($roles); $i++) { 
+
+                    if ($role_filter != $roles[$i]['Id']){
+                        echo "<option value=".$roles[$i]['Id'].">".$roles[$i]['Nom_role']."</option>";
+                    }else{
+                        echo "<option value=".$roles[$i]['Id']." selected>".$roles[$i]['Nom_role']."</option>";
+                    }
+
+                }?>
+            </select>
+
+            <button type="submit" class="btn btn-outline" >Filtrer</button>
             <button type="button" class="btn btn-outline" onclick="window.location.href='utilisateurs.php'" >Reinitialiser</button>
 
         </form><br>
@@ -68,6 +112,7 @@ require_once(__DIR__ . '/select.php');
             <tr>
                 <th>Utilisateurs</th>
                 <th>Emails</th>
+                <th>Roles</th>
                 <th>Action</th>
             </tr>
 
@@ -75,6 +120,7 @@ require_once(__DIR__ . '/select.php');
             <tr>
                 <td><?php echo $utilisateurs[$i]['Nom']." ".$utilisateurs[$i]['Prenom'];?></td>
                 <td><?php echo $utilisateurs[$i]['Email'];?></td>
+                <td><?php echo $utilisateurs[$i]['Nom_role'];?></td>
                 <td>
 
                     <form action="update_utilisateur.php" method="post">
@@ -82,6 +128,7 @@ require_once(__DIR__ . '/select.php');
                         <input type="hidden" name="update_nom" value="<?php echo $utilisateurs[$i]['Nom'];?>">
                         <input type="hidden" name="update_prenom" value="<?php echo $utilisateurs[$i]['Prenom'];?>">
                         <input type="hidden" name="update_email" value="<?php echo $utilisateurs[$i]['Email'];?>">
+                        <input type="hidden" name="update_role" value="<?php echo $utilisateurs[$i]['Id_role'];?>">
                         <button class="btn btn-outline" type="submit">Modifier</button>
                     </form>
 

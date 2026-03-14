@@ -8,11 +8,13 @@ if (isset($_POST['update_id_user'])
 && isset($_POST['update_nom'])
 && isset($_POST['update_prenom'])
 && isset($_POST['update_email'])
+&& isset($_POST['update_role'])
 ) {
     $id_user=$_POST['update_id_user'];
     $nom=$_POST['update_nom'];
     $prenom=$_POST['update_prenom'];
     $email=$_POST['update_email'];
+    $id_role=$_POST['update_role'];
 }
 
 ?>
@@ -54,6 +56,22 @@ if (isset($_POST['update_id_user'])
                     <label for="status">Email</label>
                     <input type="text" name="updated_email" value="<?php echo $email;?>">
                 </div>
+
+                <div>
+                    <label for="updated_role_user">Role</label>
+                    <select name="updated_role_user" >
+                        <?php for ($i=0; $i < count($roles); $i++) { 
+
+                            if ($id_role != $roles[$i]['Id']){
+                                echo "<option value=".$roles[$i]['Id'].">".$roles[$i]['Nom_role']."</option>";
+                            }else{
+                                echo "<option value=".$roles[$i]['Id']." selected>".$roles[$i]['Nom_role']."</option>";
+                            }
+
+                        }?>
+                    </select>
+                </div>
+
             </div>
 
             <div class="action">

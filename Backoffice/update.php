@@ -31,19 +31,22 @@ isset($_POST['updated_id_contrat'])){
 if(isset($_POST['updated_id_user']) && 
 isset($_POST['updated_nom']) && 
 isset($_POST['updated_prenom']) && 
-isset($_POST['updated_email'])){
+isset($_POST['updated_email']) && 
+isset($_POST['updated_role_user'])){
 
     $id_user=$_POST['updated_id_user'];
     $nom=$_POST['updated_nom'];
     $prenom=$_POST['updated_prenom'];
     $email=$_POST['updated_email'];
+    $id_role=$_POST['updated_role_user'];
 
-    $sql = "UPDATE utilisateurs SET Nom=:nom, Prenom=:prenom, email=:email WHERE Id=:id_user";
+    $sql = "UPDATE utilisateurs SET Nom=:nom, Prenom=:prenom, Email=:email, Id_role=:id_role  WHERE Id=:id_user";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         'id_user'=>$id_user,
         'nom'=>$nom,
         'prenom'=>$prenom,
-        'email'=>$email
+        'email'=>$email,
+        'id_role' => $id_role
     ]);
 }

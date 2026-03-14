@@ -82,10 +82,26 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $mode_travail=$stmt->fetchall();
 
+//Selection des roles
+
+$sql = "SELECT * FROM `roles`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$roles=$stmt->fetchall();
 
 
 
-$sql = "SELECT * FROM `utilisateurs` WHERE 1=1";
+
+$sql = "SELECT 
+ut.Id,
+ut.Nom,
+ut.Prenom,
+ut.Email,
+ut.Id_role,
+rl.Nom_role
+FROM utilisateurs ut
+JOIN roles rl ON ut.Id_role=rl.Id
+WHERE 1=1";
 
 // Filtrage des utilisateurs
 
@@ -119,6 +135,16 @@ if (isset($_POST['email'])){
     $sql.= " AND Prenom LIKE :filtre_email";
 
     $params['filtre_email'] = "%".$filtre_email."%"; //on stock la valeur en post dans params
+}
+
+    // Filtre avec le role
+
+if (isset($_POST['role_user'])){
+    $filtre_role=$_POST['role_user'];
+
+    $sql.= " AND ut.Id_role= :filtre_role";
+
+    $params['filtre_role'] = $filtre_role;
 }
 
 //Selection des utilisateurs
