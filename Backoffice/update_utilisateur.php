@@ -15,6 +15,8 @@ if (isset($_POST['update_id_user'])
     $prenom=$_POST['update_prenom'];
     $email=$_POST['update_email'];
     $id_role=$_POST['update_role'];
+}else{
+    header("Location: utilisateurs.php");
 }
 
 ?>

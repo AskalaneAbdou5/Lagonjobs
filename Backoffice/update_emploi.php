@@ -14,6 +14,8 @@ if (isset($_POST['update_id'])
     $id_status=$_POST['update_status'];
     $id_contrat=$_POST['update_contrat'];
     $descrip=$_POST['update_description'];
+}else{
+    header("Location: offres.php");
 }
 
 ?>
