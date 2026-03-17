@@ -12,33 +12,43 @@ isset($_GET['mode_de_travail']) &&
 isset($_GET['date_debut']) &&
 isset($_GET['date_fin'])){
 
-    $titre=$_GET['titre'];
+    $titre=trim($_GET['titre']);
     $status=$_GET['status'];
     $contrat=$_GET['categorie'];
-    $description=$_GET['description'];
-    $mission=$_GET['mission'];
-    $profil=$_GET['profil'];
+    $description=trim($_GET['description']);
+    $mission=trim($_GET['mission']);
+    $profil=trim($_GET['profil']);
     $ville=$_GET['ville'];
     $mdt=$_GET['mode_de_travail'];
-    $date_debut=$_GET['date_debut'];
-    $date_fin=$_GET['date_fin'];
+    $date_debut=trim($_GET['date_debut']);
+    $date_fin=trim($_GET['date_fin']);
 
+    if(!empty($titre) && 
+    !empty($description) && 
+    !empty($mission) && 
+    !empty($profil) &&
+    !empty($date_debut) &&
+    !empty($date_fin)){
 
-    $sql = "INSERT INTO offres(Titre,Id_status,Id_contrat,Description,Mission,Profil,Id_ville,Id_mode_de_travail,Date_debut,Date_fin)
-    VALUES (:titre,:id_status,:id_contrat,:descrip,:mission,:profil,:id_ville,:id_mdt,:date_debut,:date_fin)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        'titre'=>$titre,
-        'id_status'=>$status,
-        'id_contrat'=>$contrat,
-        'descrip'=>$description,
-        'mission'=>$mission,
-        'profil'=>$profil,
-        'id_ville'=>$ville,
-        'id_mdt'=>$mdt,
-        'date_debut'=>$date_debut,
-        'date_fin'=>$date_fin
-    ]);
+        $sql = "INSERT INTO offres(Titre,Id_status,Id_contrat,Description,Mission,Profil,Id_ville,Id_mode_de_travail,Date_debut,Date_fin)
+        VALUES (:titre,:id_status,:id_contrat,:descrip,:mission,:profil,:id_ville,:id_mdt,:date_debut,:date_fin)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            'titre'=>$titre,
+            'id_status'=>$status,
+            'id_contrat'=>$contrat,
+            'descrip'=>$description,
+            'mission'=>$mission,
+            'profil'=>$profil,
+            'id_ville'=>$ville,
+            'id_mdt'=>$mdt,
+            'date_debut'=>$date_debut,
+            'date_fin'=>$date_fin
+        ]);
+    }else{
+        echo "<script> alert('Veuillez remplir tous les champs');
+        window.location.href = 'offres.php';</script>";
+    }
 }
 
 
