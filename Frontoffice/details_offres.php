@@ -57,6 +57,7 @@ if (isset($_GET['id_offre'])){
         <br>
         <br>
         <article class="card">
+            <a href="offres.php">←Retour aux offres</a><br>
             <p class="badge"><?php echo $contrat ?></p>
             <h1><?php echo $titre ?></h1>
 

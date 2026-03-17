@@ -2,6 +2,7 @@
 session_start();
 require_once('../asset/configmysql.php');
 require_once(__DIR__ . '/session.php');
+require_once(__DIR__ . '/insert.php');
 ?>
 
 
@@ -48,30 +49,30 @@ require_once(__DIR__ . '/session.php');
       <p>Une question ? Envoyez-nous un message et un adminitrateur vous répondra.</p>
     </div>
 
-      <form action="contact.html" method="POST" class="form">
+      <form action="contact.php" method="POST" class="form">
         
         <div class="stack">
           <div class="row">
             <div>
               <label for="nom">Nom</label>
-              <input type="text" name="nom" required>
+              <input type="text" name="nom_contact" required>
             </div>
 
             <div>
               <label for="email">Email</label>
-              <input type="text" name="email" required>
+              <input type="email" name="email_contact" required>
             </div>
           </div>
 
           <div class="stack">
             <div>
               <label for="sujet">Sujet</label>
-              <input type="text" name="suje" required>
+              <input type="text" name="sujet_contact" required>
             </div>
 
             <div>
               <label for="message">Message</label>
-              <textarea name="message" id=""></textarea>
+              <textarea name="message_contact" ></textarea>
             </div>
           </div>
 
