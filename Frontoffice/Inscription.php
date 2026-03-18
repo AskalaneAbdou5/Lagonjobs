@@ -27,52 +27,54 @@ require_once(__DIR__ . '/session.php');
         </nav>
     </header>
 
-    <main class="center hero">
-        
-        <h1> Inscription </h1>
+    <main class=" hero">
 
-        <form action="connexion.php" class="form row auth-card" method="post">
+        <div class="center">
+            <h1> Inscription </h1>
 
-            <div class="stack">
-                <div class="row">
-                    <div>
-                        <label >Prénom</label>         
-                        <input type="text" name="insert_prenom" required>
-                    </div>
-
-                    <div>
-                        <label>Nom</label>
-                        <input type="text" name="insert_nom" required>
-                    </div>
-                </div>
+            <form action="connexion.php" class="form row auth-card" method="post">
 
                 <div class="stack">
-                    <div>
-                        <label>Email</label>         
-                        <input type="email" name="insert_email" required>
-                    </div>
-                </div>
+                    <div class="row">
+                        <div>
+                            <label >Prénom</label>         
+                            <input type="text" name="insert_prenom" required>
+                        </div>
 
-                <div class="row">
-                    <div>
-                        <label>Mot De Passe</label>         
-                        <input type="password" name="insert_password" required>
+                        <div>
+                            <label>Nom</label>
+                            <input type="text" name="insert_nom" required>
+                        </div>
                     </div>
 
-                    <div>
-                        <label>Confirmer le mot de passe</label>          
-                        <input type="password" name="re_password" required>
+                    <div class="stack">
+                        <div>
+                            <label>Email</label>         
+                            <input type="email" name="insert_email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label>Mot De Passe</label>         
+                            <input type="password" name="insert_password" required>
+                        </div>
+
+                        <div>
+                            <label>Confirmer le mot de passe</label>          
+                            <input type="password" name="re_password" required>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <div>
+                            <button type="submit" class="btn btn-outline">Créer mon compte</button> 
+                            <button type="button" class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
+                        </div>
                     </div>
                 </div>
-                <div class="action">
-                    <div>
-                        <button type="submit" class="btn btn-outline">Créer mon compte</button> 
-                        <button type="button" class="btn" onclick="window.location.href='connexion.php'">Déjà inscrit?</button>
-                    </div>
-                </div>
-            </div>
-         
-        </form>
+            
+            </form>
+        </div>
     </main>
 
     <footer class="site-footer footer-inner">

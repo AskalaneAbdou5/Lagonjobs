@@ -27,35 +27,34 @@ require_once(__DIR__ . '/insert.php');
 
     </header>
 
-    <main class="center hero">
+    <main class=" hero">
 
-        <h1>Connexion</h1>
+        <div class="center">
+            <h1>Connexion</h1>
 
-        <form action="connexion.php" class="form row auth-card" method="POST">
+            <form action="connexion.php" class="form row auth-card" method="POST">
 
-            <div class="stack">
                 <div class="stack">
-                    <div>
-                        <label>Email</label>         
-                        <input type="email" name="log_email" required>
-                    </div>
+                        <div>
+                            <label>Email</label>         
+                            <input type="email" name="log_email" required>
+                        </div>
 
-                    <div>
-                        <label>Mot de passe</label>         
-                        <input type="password" name="log_password" required>
+                        <div>
+                            <label>Mot de passe</label>         
+                            <input type="password" name="log_password" required>
+                        </div>
+                    
+                    <a href="connexion.html">Mot de passe oublié ?</a>
+
+                    <div class="action">
+                        <button type="submit" class="btn btn-outline">Se connecter</button> 
+                        <button type="button" class="btn" onclick="window.location.href='Inscription.php'">Créer un compte</button>
                     </div>
                 </div>
-                
-                <a href="connexion.html">Mot de passe oublié ?</a>
 
-                <div class="action">
-                    <button type="submit" class="btn btn-outline">Se connecter</button> 
-                    <button type="button" class="btn" onclick="window.location.href='Inscription.php'">Créer un compte</button>
-                </div>
-            </div>
-
-
-        </form>
+            </form>
+        </div>
     </main>
 
 

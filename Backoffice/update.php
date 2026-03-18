@@ -8,7 +8,7 @@ isset($_POST['updated_descript']) &&
 isset($_POST['updated_id_status']) &&
 isset($_POST['updated_id_contrat'])){
 
-    $id_offre=$_POST['updated_id'];
+    $id_offre=$_POST['updated_id_offre'];
     $titre=$_POST['updated_titre'];
     $description=$_POST['updated_descript'];
     $status=$_POST['updated_id_status'];

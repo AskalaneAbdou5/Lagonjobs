@@ -87,7 +87,7 @@ a:hover{color:var(--lagon)}
 .meta{color:var(--text-2); font-size:.95rem}
 .badge{display:inline-block; font-size:.8rem; background:#eaf6fa; color:var(--lagon-dark); padding:.25rem .5rem; border-radius:999px; margin-right:.35rem}
 
-.site-footer{background:#007EA7; color:#dbe5ea; margin-top:40px}
+.site-footer{background:#007EA7; color:#dbe5ea;}
 .footer-inner{display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0}
 .footer-inner a{color:#dbe5ea}
 
@@ -147,6 +147,25 @@ a:hover{color:var(--lagon)}
 
 .table-offres td form {
   display: inline-block;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background: #111;
+  color: white;
+
 }
 
 @media (max-width: 900px){
