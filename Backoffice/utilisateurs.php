@@ -147,9 +147,9 @@ if (isset($_POST['role_user'])){
                         <button class="btn btn-outline" type="submit">Modifier</button>
                     </form>
 
-                    <form action="utilisateurs.php" method="get">
+                    <form action="utilisateurs.php" method="post">
                         <input type="hidden" name="delete_user" value="<?php echo $utilisateurs[$i]['Id'] ?>">
-                        <button class="btn btn-outline">Supprimer</button>
+                        <button class="btn_delete">Supprimer</button>
                     </form> 
 
                 </td>

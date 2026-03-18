@@ -36,7 +36,7 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
                 'id_role' => 1
             ]);
 
-            echo "<script> alert('Votre compte a été bien créé');</script>";
+            echo "<script> alert('Votre compte a été créé avec succès');</script>";
         }else {
             echo "<script>
                 alert('email déjà utilisé / mot de passe non identique');

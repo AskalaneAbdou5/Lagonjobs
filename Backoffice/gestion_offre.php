@@ -134,9 +134,12 @@ if (isset($_POST['categorie'])){
                         <input type="hidden" name="update_description" value="<?php echo $offres[$i]['Description'];?>">
                         <button class="btn btn-outline" type="submit">Modifier</button>
                     </form>
-                    <form action="gestion_offre.php" method="get">
-                        <input type="hidden" name="delete_offre" value="<?php echo $offres[$i]['Id'] ?>">
-                        <button class="btn btn-outline">Supprimer</button>
+                    <form action="comfirme_delete.php" method="post">
+                        <input type="hidden" name="id_delete_offre" value="<?php echo $offres[$i]['Id'] ?>">
+                        <input type="hidden" name="titre_delete_offre" value="<?php echo $offres[$i]['Titre'] ?>">
+                        <input type="hidden" name="contrat_delete_offre" value="<?php echo $offres[$i]['Contrat'] ?>">
+                        <input type="hidden" name="descript_delete_offre" value="<?php echo $offres[$i]['Description'] ?>">
+                        <button class="btn_delete">Supprimer</button>
                     </form> 
 
                 </td>
