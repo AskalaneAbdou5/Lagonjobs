@@ -5,6 +5,7 @@ $sql = "SELECT of.Id,
 of.Titre,
 tdc.Contrat,
 vil.Nom_ville,
+of.Id_status,
 mdt.Mode_de_travail,
 of.Description,
 of.Mission,
@@ -17,7 +18,7 @@ JOIN status st ON of.Id_status=st.Id
 JOIN types_de_contrat tdc ON of.Id_contrat=tdc.Id
 JOIN villes vil ON of.Id_ville=vil.Id
 JOIN modes_de_travail mdt ON of.Id_mode_de_travail=mdt.Id 
-WHERE 1=1 
+WHERE of.Id_status = 1
 ";
 
 // Filtrage des données 
@@ -35,7 +36,7 @@ if (isset($_POST['motcle'])){
     $params['motcle'] = "%".$motcle."%"; //on stock la valeur en post dans params
 }
 
-    //TYPE DE CONTRATS
+    //CONTRATs
 
 if (isset($_POST['type_de_contrat'])){
     $contrat=$_POST['type_de_contrat'];
@@ -46,7 +47,7 @@ if (isset($_POST['type_de_contrat'])){
     }
 }
 
-    //VILLES
+    //VILLEs
 
 if (isset($_POST['ville'])){
     $ville=$_POST['ville'];
@@ -57,7 +58,7 @@ if (isset($_POST['ville'])){
     }
 }
 
-    //MODE DE TRAVAIL
+//MODE DE TRAVAIL
 
 if (isset($_POST['mode_de_travail'])){
     $mdt=$_POST['mode_de_travail'];
@@ -68,9 +69,6 @@ if (isset($_POST['mode_de_travail'])){
     }
 }
 
-// TRI EN DECROISSANT
-
-$sql .= " ORDER BY of.Id DESC";
 
 //Selection des offres
 

@@ -9,7 +9,8 @@ of.Description,
 ctr.Contrat,
 st.Status FROM offres of
 JOIN status st ON of.Id_status=st.Id
-JOIN types_de_contrat ctr ON of.Id_contrat=ctr.Id";
+JOIN types_de_contrat ctr ON of.Id_contrat=ctr.Id
+WHERE of.Id_status = 1";
 
 // Filtrage des offres
 
