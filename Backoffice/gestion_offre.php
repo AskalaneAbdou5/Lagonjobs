@@ -91,7 +91,7 @@ if (isset($_POST['categorie'])){
             </select>
 
             <select name="categorie" >
-                <option value="">Catégorie</option>
+                <option value="">Type de contrat</option>
                 <?php for ($i=0; $i < count($categories); $i++) { 
 
                   //Fige le type de contrat si l'id du type de contrat en post correspond l'id du type de contrat de la base 

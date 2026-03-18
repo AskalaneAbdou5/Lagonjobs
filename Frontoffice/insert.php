@@ -1,4 +1,8 @@
 <?php
+require_once('../asset/configmysql.php');
+require_once(__DIR__ . '/select.php');
+require_once(__DIR__ . '/fonction.php');
+
 
 //Ajoute d'un utilisateur 
 
@@ -13,8 +17,13 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
    
     if (!empty($Prenom) && !empty($Nom) && !empty($Email) && !empty($Motdepasse) && !empty($Remotdepasse)) {
 
-        //Ajout d'un utilisateur si les mots de passes sont identique
-        if ($Motdepasse === $Remotdepasse) {
+        //verifie si les mots de passes sont identique ou si l'email est dans la base
+
+        if ($Motdepasse == $Remotdepasse && !virifie_email_dans_la_base($Email,$utilisateurs)) {
+
+
+            //hash le mot de passe
+
             $motdepasse_hash=password_hash($Motdepasse, PASSWORD_DEFAULT);
 
             $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES(:nom, :prenom, :email, :mdp ,:id_role)"; 
@@ -30,7 +39,7 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
             echo "<script> alert('Votre compte a été bien créé');</script>";
         }else {
             echo "<script>
-                alert('Les mots de passe ne sont pas identique');
+                alert('email déjà utilisé / mot de passe non identique');
                 window.location.href = 'Inscription.php';
             </script>";
         }

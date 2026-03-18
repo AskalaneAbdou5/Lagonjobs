@@ -67,7 +67,7 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
                     </div>
 
                     <div>
-                        <label for="categorie">Catégorie :</label>
+                        <label for="categorie">Type de contrat :</label>
                         <select name="categorie" >
                             <?php for ($i=0; $i < count($categories); $i++) { 
                             echo "<option value=".$categories[$i]['Id'].">".$categories[$i]['Contrat']."</option>";

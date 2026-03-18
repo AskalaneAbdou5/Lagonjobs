@@ -9,4 +9,15 @@ function calcul_periode_de_contrat ($nb_jours){
 
 }
 
+function virifie_email_dans_la_base($email, $table_utilisateurs){
+
+    for ($i=0; $i < count($table_utilisateurs); $i++) { 
+        if ($table_utilisateurs[$i]['Email'] == $email) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
 ?>
