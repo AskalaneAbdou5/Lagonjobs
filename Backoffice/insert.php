@@ -65,6 +65,10 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
     $Motdepasse=trim($_POST['insert_password']);
     $role_user=trim($_POST['insert_role_user']);
 
+    //hash le mot de passe
+
+    $motdepasse_hash=password_hash($Motdepasse, PASSWORD_DEFAULT);
+
     //verifie si les variables sont vides
 
     if (!empty($Prenom) && !empty($Nom) && !empty($Email) && !empty($Motdepasse) && !empty($role_user)) {
@@ -75,7 +79,7 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
             'nom' => $Nom,
             'prenom' => $Prenom,
             'email' => $Email,
-            'mdp' => $Motdepasse,
+            'mdp' => $motdepasse_hash,
             'id_role' => $role_user
         ]);
     }else{

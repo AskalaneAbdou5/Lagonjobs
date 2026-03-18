@@ -5,7 +5,7 @@ require_once(__DIR__ . '/select.php');
 
 if (isset($_POST['log_email']) && isset($_POST['log_password'])){
     for ($i=0; $i < count($utilisateurs); $i++) { 
-        if ($utilisateurs[$i]['Email'] == $_POST['log_email'] && $utilisateurs[$i]['Mot_de_passe'] == $_POST['log_password']){
+        if ($utilisateurs[$i]['Email'] == $_POST['log_email'] && password_verify($_POST['log_password'], $utilisateurs[$i]['Mot_de_passe'])){
 
             if($utilisateurs[$i]['Id_role'] == 2){
                 $_SESSION['LOG_ADMIN']= $utilisateurs[$i]['Nom']." ".$utilisateurs[$i]['Prenom'];

@@ -15,6 +15,7 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
 
         //Ajout d'un utilisateur si les mots de passes sont identique
         if ($Motdepasse === $Remotdepasse) {
+            $motdepasse_hash=password_hash($Motdepasse, PASSWORD_DEFAULT);
 
             $sql = "INSERT INTO utilisateurs(Nom,Prenom,Email,Mot_de_passe,Id_role) VALUES(:nom, :prenom, :email, :mdp ,:id_role)"; 
             $stmt = $pdo->prepare($sql);
@@ -22,7 +23,7 @@ if (isset($_POST['insert_prenom']) && isset($_POST['insert_nom']) && isset($_POS
                 'nom' => $Nom,
                 'prenom' => $Prenom,
                 'email' => $Email,
-                'mdp' => $Motdepasse,
+                'mdp' => $motdepasse_hash,
                 'id_role' => 1
             ]);
 
