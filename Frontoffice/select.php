@@ -58,7 +58,7 @@ if (isset($_POST['ville'])){
     }
 }
 
-//MODE DE TRAVAIL
+    //MODE DE TRAVAIL
 
 if (isset($_POST['mode_de_travail'])){
     $mdt=$_POST['mode_de_travail'];
@@ -68,6 +68,40 @@ if (isset($_POST['mode_de_travail'])){
         $params['mdt'] = $mdt;
     }
 }
+
+
+$page_actuel=1; //la page actuel
+$debut=0;
+
+//Mis à jour de la page actuelle après avoir être revenu à la page precedent
+
+if(isset($_GET['id_page_precedent'])){
+    $page_actuel=intval($_GET['id_page_precedent']);
+}
+
+
+//Mis à jour de la page actuelle après être allé à la page suivante
+
+if(isset($_GET['id_page_suivant'])){
+    $page_actuel=intval($_GET['id_page_suivant']);
+}
+
+// recupere le nombre d'offre
+
+$sl = "SELECT COUNT(Id) FROM `offres`";
+$stmt = $pdo->prepare($sl);
+$stmt->execute();
+$nbOffres=$stmt->fetchColumn();
+
+$nbDePages = intdiv( $nbOffres, 8);
+
+if (($nbOffres%5)!= 0){
+    $nbDePages+=1;
+}
+
+$debut = ($page_actuel * 8) - 8;
+
+$sql.=" ORDER BY of.Id LIMIT ".$debut.",8";
 
 
 //Selection des offres
