@@ -163,6 +163,48 @@ if (isset($_POST['mode_de_travail'])){
 
       </section>
     </div>
+    
+      <center>
+
+          <!-- Bouton precedent de la pagination pour revenir la page precedente -->
+
+          <?php if (($page_actuel - 1) < 1 ){ ?>
+
+              <form action="offres.php" method="get">
+                <input type="hidden" name="id_page_precedent" value="<?php echo $page_actuel ?>">
+                <button type="submit" disabled>Précédent</button>
+              </form>
+
+          <?php }else{ ?>
+
+              <form action="offres.php" method="get">
+                    <input type="hidden" name="id_page_precedent" value="<?php echo $page_actuel - 1 ?>">
+                    <button type="submit">Précédent</button>
+                </form>
+
+          <?php } ?>
+
+
+          <!-- Bouton precedent de la pagination pour revenir la page precedente -->
+
+          <?php if (($page_actuel + 1) > $nbDePages){ ?>
+
+              <form action="offres.php" method="get">
+                <input type="hidden" name="id_page_suivant" value="<?php echo $page_actuel ?>">
+                <button type="submit" disabled>Suivant</button>
+              </form>
+
+          <?php }else{ ?>
+
+              <form action="offres.php" method="get">
+                    <input type="hidden" name="id_page_suivant" value="<?php echo $page_actuel + 1 ?>">
+                    <button type="submit">Suivant</button>
+                </form>
+
+          <?php } ?>
+
+          
+      </center>
 
   </main>
   

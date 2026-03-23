@@ -50,6 +50,39 @@ if (isset($_POST['categorie'])){
 }
 
 
+$page_actuel=1; //la page actuel
+$debut=0;
+
+//Mis à jour de la page actuelle après avoir être revenu à la page precedent
+
+if(isset($_GET['id_page_precedent'])){
+    $page_actuel=intval($_GET['id_page_precedent']);
+}
+
+
+//Mis à jour de la page actuelle après être allé à la page suivante
+
+if(isset($_GET['id_page_suivant'])){
+    $page_actuel=intval($_GET['id_page_suivant']);
+}
+
+// recupere le nombre d'offre
+
+$sl = "SELECT COUNT(Id) FROM `offres`";
+$stmt = $pdo->prepare($sl);
+$stmt->execute();
+$nbOffres=$stmt->fetchColumn();
+
+$nbDePages = intdiv( $nbOffres, 5);
+
+if (($nbOffres%5)!= 0){
+    $nbDePages+=1;
+}
+
+$debut = ($page_actuel * 5) - 5;
+
+$sql.=" LIMIT ".$debut.",5";
+
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
