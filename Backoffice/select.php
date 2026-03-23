@@ -50,6 +50,7 @@ if (isset($_POST['categorie'])){
 }
 
 
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $offres=$stmt->fetchall();
@@ -89,7 +90,6 @@ $sql = "SELECT * FROM `roles`";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $roles=$stmt->fetchall();
-
 
 
 
