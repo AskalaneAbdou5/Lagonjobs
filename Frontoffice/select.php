@@ -93,9 +93,9 @@ $stmt = $pdo->prepare($sl);
 $stmt->execute();
 $nbOffres=$stmt->fetchColumn();
 
-$nbDePages = intdiv( $nbOffres, 8);
+$nbDePages = intdiv($nbOffres, 8);
 
-if (($nbOffres%5)!= 0){
+if (($nbOffres%8)!= 0){
     $nbDePages+=1;
 }
 

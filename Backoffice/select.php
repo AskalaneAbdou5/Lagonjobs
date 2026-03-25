@@ -133,7 +133,6 @@ $roles=$stmt->fetchall();
 
 
 
-
 $sql = "SELECT 
 ut.Id,
 ut.Nom,
