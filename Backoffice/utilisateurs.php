@@ -28,7 +28,7 @@ if (isset($_POST['role_user'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gestion d'offre</title>
+    <title>gestion d'utilisateurs</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../logo/Logo.png" />
 
@@ -43,6 +43,7 @@ if (isset($_POST['role_user'])){
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
         <a href="utilisateurs.php">Utilisateur</a>
+        <a href="messages_contact.php">Messages</a>
 
         <?php if(isset($_SESSION['LOG_ADMIN'])){ ?>
 
@@ -125,9 +126,9 @@ if (isset($_POST['role_user'])){
 
         <table class="table-offres">
             <tr>
-                <th>Utilisateurs</th>
-                <th>Emails</th>
-                <th>Roles</th>
+                <th>Utilisateur</th>
+                <th>Email</th>
+                <th>Role</th>
                 <th>Action</th>
             </tr>
 

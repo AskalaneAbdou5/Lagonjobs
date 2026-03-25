@@ -52,6 +52,7 @@ if (isset($_POST['categorie'])){
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
         <a href="utilisateurs.php">Utilisateur</a>
+        <a href="messages_contact.php">Messages</a>
 
         <?php if(isset($_SESSION['LOG_ADMIN'])){ ?>
 

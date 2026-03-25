@@ -95,6 +95,13 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $status=$stmt->fetchall();
 
+//Selection des messages
+
+$sql = "SELECT * FROM `messages`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$messages=$stmt->fetchall();
+
 
 //Selection des categories
 
