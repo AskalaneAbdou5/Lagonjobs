@@ -38,7 +38,7 @@ if (isset($_POST['role_user'])){
     <header class="site-header header-inner">
 
 
-    <span class="logo"><a href="gestion_offre.html">Lagon</a>jobs</span>
+    <span class="logo"><a href="gestion_offre.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
     <nav class="nav">
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>

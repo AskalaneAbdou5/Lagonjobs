@@ -21,7 +21,7 @@ require_once(__DIR__ . '/insert.php');
     <header class="site-header header-inner">
 
 
-    <span class="logo"><a href="index.html">Lagon</a>jobs</span>
+    <span class="logo"><a href="index.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
     <nav class="nav">
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>
