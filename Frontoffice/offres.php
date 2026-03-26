@@ -35,6 +35,7 @@ if (isset($_POST['mode_de_travail'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offres</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 </head>
 <body>
 
@@ -43,7 +44,7 @@ if (isset($_POST['mode_de_travail'])){
   <header class="site-header header-inner">
 
 
-    <span class="logo"><a href="index.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
+    <span class="logo"><a href="index.php"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
     <nav class="nav">
         <a href="index.php">Accueil</a>
         <a href="offres.php">Offres</a>

@@ -13,12 +13,12 @@ require_once(__DIR__ . '/select.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../logo/Logo.png" />
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 </head>
 <body>
     <header class="site-header header-inner">
 
-        <span class="logo"><a href="index.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
+        <span class="logo"><a href="index.php"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
         <nav class="nav">
             <a href="index.php">Accueil</a>
             <a href="offres.php">Offres</a>

@@ -21,7 +21,7 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../logo/Logo.png" />
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 
 </head>
 <body class="body">
@@ -48,7 +48,7 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
 
     <main class="container">
 
-        <h1>Les Messages reçu</h1>
+        <h1>Les Messages reçus</h1>
 
 
         <table class="table-offres">
