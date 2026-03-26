@@ -117,7 +117,7 @@ if (isset($_POST['categorie'])){
             <tr>
                 <th>Titre</th>
                 <th>Statut</th>
-                <th>Catégorie</th>
+                <th>Type de contrat</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>
