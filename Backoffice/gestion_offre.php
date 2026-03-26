@@ -64,7 +64,7 @@ if (isset($_POST['categorie'])){
   </header>
 
     <main class="container">
-        <h1>Gestion des emploies</h1><br>
+        <h1>Gestion des offres</h1><br>
 
         <!-- FORMULAIRE DE FILTRAGE -->
 
