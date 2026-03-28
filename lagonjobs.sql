@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 25 mars 2026 à 21:14
+-- Généré le : sam. 28 mars 2026 à 07:36
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -81,14 +81,14 @@ CREATE TABLE `offres` (
   `Id_mode_de_travail` int(11) NOT NULL,
   `Date_debut` date NOT NULL,
   `Date_fin` date NOT NULL,
-  `Id_status` int(11) NOT NULL
+  `Id_statut` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `offres`
 --
 
-INSERT INTO `offres` (`Id`, `Titre`, `Description`, `Mission`, `Profil`, `Id_contrat`, `Id_ville`, `Id_mode_de_travail`, `Date_debut`, `Date_fin`, `Id_status`) VALUES
+INSERT INTO `offres` (`Id`, `Titre`, `Description`, `Mission`, `Profil`, `Id_contrat`, `Id_ville`, `Id_mode_de_travail`, `Date_debut`, `Date_fin`, `Id_statut`) VALUES
 (2, 'Technicien support', 'Assistance utilisateur, résolution d\'incidents et maintenance.', 'aucun pour l\'instant', 'aucun pour l\'instant', 2, 2, 2, '2025-12-01', '2026-04-29', 2),
 (3, 'Admin systèmes junior', 'Administration Linux/Windows, sauvegardes et supervision.', 'aucun pour l\'instant', 'aucun pour l\'instant', 2, 3, 3, '2025-12-01', '2026-02-26', 1),
 (9, 'Administrateur systèmes junior', 'Gestion et maintenance des serveurs', 'Assurer le bon fonctionnement de l’infrastructure', 'Bac+2 en informatique, notions Linux', 2, 2, 2, '2026-02-01', '2026-12-31', 1),
@@ -130,19 +130,19 @@ INSERT INTO `roles` (`Id`, `Nom_role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `status`
+-- Structure de la table `statuts`
 --
 
-CREATE TABLE `status` (
+CREATE TABLE `statuts` (
   `Id` int(11) NOT NULL,
-  `Status` varchar(50) NOT NULL
+  `Statut` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `status`
+-- Déchargement des données de la table `statuts`
 --
 
-INSERT INTO `status` (`Id`, `Status`) VALUES
+INSERT INTO `statuts` (`Id`, `Statut`) VALUES
 (1, 'Publié'),
 (2, 'Brouillon');
 
@@ -286,7 +286,7 @@ ALTER TABLE `offres`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `Id_contrat` (`Id_contrat`),
   ADD KEY `Id_mode_de_travail` (`Id_mode_de_travail`),
-  ADD KEY `Id_status` (`Id_status`),
+  ADD KEY `Id_status` (`Id_statut`),
   ADD KEY `Id_ville` (`Id_ville`);
 
 --
@@ -296,9 +296,9 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Index pour la table `status`
+-- Index pour la table `statuts`
 --
-ALTER TABLE `status`
+ALTER TABLE `statuts`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -349,9 +349,9 @@ ALTER TABLE `roles`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `status`
+-- AUTO_INCREMENT pour la table `statuts`
 --
-ALTER TABLE `status`
+ALTER TABLE `statuts`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -382,7 +382,7 @@ ALTER TABLE `villes`
 ALTER TABLE `offres`
   ADD CONSTRAINT `offres_ibfk_1` FOREIGN KEY (`Id_contrat`) REFERENCES `types_de_contrat` (`Id`),
   ADD CONSTRAINT `offres_ibfk_2` FOREIGN KEY (`Id_mode_de_travail`) REFERENCES `modes_de_travail` (`Id`),
-  ADD CONSTRAINT `offres_ibfk_3` FOREIGN KEY (`Id_status`) REFERENCES `status` (`Id`),
+  ADD CONSTRAINT `offres_ibfk_3` FOREIGN KEY (`Id_statut`) REFERENCES `statuts` (`Id`),
   ADD CONSTRAINT `offres_ibfk_4` FOREIGN KEY (`Id_ville`) REFERENCES `villes` (`Id`);
 
 --
