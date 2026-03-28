@@ -30,7 +30,7 @@ if (isset($_POST['role_user'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion d'utilisateurs</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../logo/Logo.png" />
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 
 </head>
 <body class="body">
@@ -38,7 +38,7 @@ if (isset($_POST['role_user'])){
     <header class="site-header header-inner">
 
 
-    <span class="logo"><a href="gestion_offre.html">Lagon</a>jobs</span>
+    <span class="logo"><a href="gestion_offre.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
     <nav class="nav">
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>

@@ -39,7 +39,7 @@ if (isset($_POST['categorie'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion d'offre</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../logo/Logo.png" />
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 
 </head>
 <body class="body">
@@ -47,7 +47,7 @@ if (isset($_POST['categorie'])){
     <header class="site-header header-inner">
 
 
-    <span class="logo"><a href="gestion_offre.html">Lagon</a>jobs</span>
+    <span class="logo"><a href="gestion_offre.html"><img src="../logo/Logo.png" alt="logo lagonjobs"></span>
     <nav class="nav">
         <a href="gestion_offre.php">Tableau de bord</a>
         <a href="offres.php">Offres</a>
@@ -64,7 +64,7 @@ if (isset($_POST['categorie'])){
   </header>
 
     <main class="container">
-        <h1>Gestion des emploies</h1><br>
+        <h1>Gestion des offres</h1><br>
 
         <!-- FORMULAIRE DE FILTRAGE -->
 
@@ -117,7 +117,7 @@ if (isset($_POST['categorie'])){
             <tr>
                 <th>Titre</th>
                 <th>Statut</th>
-                <th>Catégorie</th>
+                <th>Type de contrat</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>

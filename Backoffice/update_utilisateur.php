@@ -31,6 +31,7 @@ if (isset($_POST['update_id_user'])
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier l'utilisateur</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../logo/Logo2.png" />
 </head>
 <body class="container">
     <h1>Modifier l'utilisateur</h1>
