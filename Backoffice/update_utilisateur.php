@@ -55,7 +55,7 @@ if (isset($_POST['update_id_user'])
 
             <div class="stack">
                 <div>
-                    <label for="status">Email</label>
+                    <label for="email">Email</label>
                     <input type="text" name="updated_email" value="<?php echo $email;?>">
                 </div>
 

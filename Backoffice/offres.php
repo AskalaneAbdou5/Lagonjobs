@@ -59,10 +59,10 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
 
                 <div class="row">
                     <div>
-                        <label for="status">Status :</label>
-                        <select name="status" >
-                            <?php for ($i=0; $i < count($status); $i++) { 
-                            echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+                        <label for="statut">Statut :</label>
+                        <select name="statut" >
+                            <?php for ($i=0; $i < count($statut); $i++) { 
+                            echo "<option value=".$statut[$i]['Id'].">".$statut[$i]['Statut']."</option>";
                             }?>
                         </select>
                     </div>

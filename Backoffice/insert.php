@@ -2,7 +2,7 @@
 // Requete SQL pour ajouter des offres
 
 if(isset($_GET['titre']) && 
-isset($_GET['status']) && 
+isset($_GET['statut']) && 
 isset($_GET['categorie']) && 
 isset($_GET['description']) &&
 isset($_GET['mission']) &&
@@ -13,7 +13,7 @@ isset($_GET['date_debut']) &&
 isset($_GET['date_fin'])){
 
     $titre=trim($_GET['titre']);
-    $status=$_GET['status'];
+    $statut=$_GET['statut'];
     $contrat=$_GET['categorie'];
     $description=trim($_GET['description']);
     $mission=trim($_GET['mission']);
@@ -30,12 +30,12 @@ isset($_GET['date_fin'])){
     !empty($date_debut) &&
     !empty($date_fin)){
 
-        $sql = "INSERT INTO offres(Titre,Id_status,Id_contrat,Description,Mission,Profil,Id_ville,Id_mode_de_travail,Date_debut,Date_fin)
-        VALUES (:titre,:id_status,:id_contrat,:descrip,:mission,:profil,:id_ville,:id_mdt,:date_debut,:date_fin)";
+        $sql = "INSERT INTO offres(Titre,Id_statut,Id_contrat,Description,Mission,Profil,Id_ville,Id_mode_de_travail,Date_debut,Date_fin)
+        VALUES (:titre,:id_statut,:id_contrat,:descrip,:mission,:profil,:id_ville,:id_mdt,:date_debut,:date_fin)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'titre'=>$titre,
-            'id_status'=>$status,
+            'id_statut'=>$statut,
             'id_contrat'=>$contrat,
             'descrip'=>$description,
             'mission'=>$mission,

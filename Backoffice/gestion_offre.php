@@ -16,10 +16,10 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
 
 //Verifier si les données du filtrage en post existe
 
-  //Le status
+  //Le statut
 
-if (isset($_POST['status'])){
-  $status_filter=$_POST['status'];
+if (isset($_POST['statut'])){
+  $statut_filter=$_POST['statut'];
 }
 
   //Le type de contrat
@@ -78,16 +78,16 @@ if (isset($_POST['categorie'])){
                 <input type="text" name="titre" placeholder="Titre">
             <?php } ?>
 
-            <select name="status" >
-                <option value="">Status</option>
-                <?php for ($i=0; $i < count($status); $i++) { 
+            <select name="statut" >
+                <option value="">Statut</option>
+                <?php for ($i=0; $i < count($statut); $i++) { 
      
-                  //Fige le status si l'id du status en post correspond l'id du status de la base 
+                  //Fige le statut si l'id du statut en post correspond l'id du statut de la base 
 
-                  if ($status_filter != $status[$i]['Id']){
-                    echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+                  if ($statut_filter != $statut[$i]['Id']){
+                    echo "<option value=".$statut[$i]['Id'].">".$statut[$i]['Statut']."</option>";
                   }else{
-                    echo "<option value=".$status[$i]['Id']." selected>".$status[$i]['Status']."</option>";
+                    echo "<option value=".$statut[$i]['Id']." selected>".$statut[$i]['Statut']."</option>";
                   }
 
                 }?>
@@ -125,14 +125,14 @@ if (isset($_POST['categorie'])){
             <?php for ($i=0; $i < count($offres); $i++) { ?>
             <tr>
                 <td><?php echo $offres[$i]['Titre'];?></td>
-                <td><?php echo $offres[$i]['Status'];?></td>
+                <td><?php echo $offres[$i]['Statut'];?></td>
                 <td><?php echo $offres[$i]['Contrat'];?></td>
                 <td><?php echo $offres[$i]['Description'];?></td>
                 <td>
                     <form action="update_emploi.php" method="post">
                         <input type="hidden" name="update_id" value="<?php echo $offres[$i]['Id'];?>">
                         <input type="hidden" name="update_titre" value="<?php echo $offres[$i]['Titre'];?>">
-                        <input type="hidden" name="update_status" value="<?php echo $offres[$i]['Id_status'];?>">
+                        <input type="hidden" name="update_statut" value="<?php echo $offres[$i]['Id_statut'];?>">
                         <input type="hidden" name="update_contrat" value="<?php echo $offres[$i]['Id_contrat'];?>">
                         <input type="hidden" name="update_description" value="<?php echo $offres[$i]['Description'];?>">
                         <button class="btn btn-outline" type="submit">Modifier</button>

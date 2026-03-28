@@ -5,13 +5,13 @@ require_once(__DIR__ . '/select.php');
 
 if (isset($_POST['update_id'])
 && isset($_POST['update_titre'])
-&& isset($_POST['update_status'])
+&& isset($_POST['update_statut'])
 && isset($_POST['update_contrat'])
 && isset($_POST['update_description'])
 ) {
     $id_emploie=$_POST['update_id'];
     $titre=$_POST['update_titre'];
-    $id_status=$_POST['update_status'];
+    $id_statut=$_POST['update_statut'];
     $id_contrat=$_POST['update_contrat'];
     $descrip=$_POST['update_description'];
 }else{
@@ -54,13 +54,13 @@ if (isset($_POST['update_id'])
 
             <div class="row">
                 <div>
-                    <label for="status">Status</label>
-                    <select name="updated_id_status" >
-                        <?php for ($i=0; $i < count($status); $i++) { 
-                            if ($status[$i]['Id'] === intval($id_status)) {
-                                echo "<option value=".$status[$i]['Id']." selected>".$status[$i]['Status']."</option>";
+                    <label for="statut">Statuts</label>
+                    <select name="updated_id_statut" >
+                        <?php for ($i=0; $i < count($statut); $i++) { 
+                            if ($statut[$i]['Id'] === intval($id_statut)) {
+                                echo "<option value=".$statut[$i]['Id']." selected>".$statut[$i]['Statut']."</option>";
                             }else{
-                                echo "<option value=".$status[$i]['Id'].">".$status[$i]['Status']."</option>";
+                                echo "<option value=".$statut[$i]['Id'].">".$statut[$i]['Statut']."</option>";
                             }
                         }?>
                     </select>

@@ -3,14 +3,14 @@
 
 $sql = "SELECT of.Id,
 of.Titre,
-of.Id_status,
+of.Id_statut,
 of.Id_contrat,
 of.Description,
 ctr.Contrat,
-st.Status FROM offres of
-JOIN status st ON of.Id_status=st.Id
+st.Statut FROM offres of
+JOIN statuts st ON of.Id_statut=st.Id
 JOIN types_de_contrat ctr ON of.Id_contrat=ctr.Id
-WHERE of.Id_status = 1";
+WHERE of.Id_statut = 1";
 
 // Filtrage des offres
 
@@ -27,14 +27,14 @@ if (isset($_POST['titre'])){
 }
 
 
-    // Filtre avec le status
+    // Filtre avec le statut
 
-if (isset($_POST['status'])){
-    $filtre_status=$_POST['status'];
-    if ($filtre_status != ""){
-        $sql.= " AND of.Id_status= :filtre_status";
+if (isset($_POST['statut'])){
+    $filtre_statut=$_POST['statut'];
+    if ($filtre_statut != ""){
+        $sql.= " AND of.Id_statut= :filtre_statut";
 
-        $params['filtre_status'] = $filtre_status;
+        $params['filtre_statut'] = $filtre_statut;
     }
 }
 
@@ -88,12 +88,12 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $offres=$stmt->fetchall();
 
-//Selection des status
+//Selection des statut
 
-$sql = "SELECT * FROM `status`";
+$sql = "SELECT * FROM `statuts`";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$status=$stmt->fetchall();
+$statut=$stmt->fetchall();
 
 //Selection des messages
 

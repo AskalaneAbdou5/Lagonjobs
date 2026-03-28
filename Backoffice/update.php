@@ -5,21 +5,21 @@
 if(isset($_POST['updated_id_offre']) && 
 isset($_POST['updated_titre']) && 
 isset($_POST['updated_descript']) && 
-isset($_POST['updated_id_status']) &&
+isset($_POST['updated_id_statut']) &&
 isset($_POST['updated_id_contrat'])){
 
     $id_offre=$_POST['updated_id_offre'];
     $titre=$_POST['updated_titre'];
     $description=$_POST['updated_descript'];
-    $status=$_POST['updated_id_status'];
+    $statut=$_POST['updated_id_statut'];
     $contrat=$_POST['updated_id_contrat'];
 
-    $sql = "UPDATE offres SET Titre=:titre, Description=:descript, Id_status=:id_status, Id_contrat=:id_contrat WHERE Id=:id";
+    $sql = "UPDATE offres SET Titre=:titre, Description=:descript, Id_statut=:id_statut, Id_contrat=:id_contrat WHERE Id=:id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         'id'=>$id_offre,
         'titre'=>$titre,
-        'id_status'=>$status,
+        'id_statut'=>$statut,
         'id_contrat'=>$contrat,
         'descript'=>$description
     ]);
