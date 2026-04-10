@@ -127,7 +127,7 @@ if (isset($_POST['categorie'])){
                 <td><?php echo $offres[$i]['Titre'];?></td>
                 <td><?php echo $offres[$i]['Statut'];?></td>
                 <td><?php echo $offres[$i]['Contrat'];?></td>
-                <td><?php echo $offres[$i]['Description'];?></td>
+                <td><?php echo substr($offres[$i]['Description'], 0, 50) . "...";?></td>
                 <td>
                     <form action="update_emploi.php" method="post">
                         <input type="hidden" name="update_id" value="<?php echo $offres[$i]['Id'];?>">
@@ -151,7 +151,7 @@ if (isset($_POST['categorie'])){
 
             
         </table>
-        <center>
+        <div class="pagination">
 
         <!-- Bouton precedent de la pagination pour revenir la page precedente -->
 
@@ -170,7 +170,11 @@ if (isset($_POST['categorie'])){
                 </form>
 
           <?php } ?>
-
+          
+          <!-- Les pages -->
+          <?php for ($i=0; $i < $nbDePages; $i++) { ?>
+            <a href="gestion_offre.php?page=<?php echo ($i+1) ?>"><?php echo ($i+1) ?></a>
+          <?php } ?>
 
       <!-- Bouton precedent de la pagination pour revenir la page precedente -->
 
@@ -190,8 +194,7 @@ if (isset($_POST['categorie'])){
 
           <?php } ?>
 
-          
-        </center>
+        </div>
     </main>
 
     <footer class="site-footer footer-inner">

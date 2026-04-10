@@ -180,6 +180,57 @@ footer {
 
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Liens des numéros */
+.pagination a {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background-color: #e9f2f4;
+    color: #1b6b7a;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #1b6b7a;
+    color: white;
+}
+
+/* Boutons précédent / suivant */
+.pagination form {
+    margin: 0;
+}
+
+.pagination button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1b6b7a;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #14545f;
+}
+
+.pagination button:disabled {
+    background-color: #cfd8dc;
+    cursor: not-allowed;
+    color: #777;
+}
+
 @media (max-width: 900px){
   .hero .grid{grid-template-columns:1fr}
   .filter-bar{grid-template-columns: repeat(2, 1fr)}

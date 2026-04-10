@@ -68,7 +68,7 @@ if (!isset($_SESSION['LOG_ADMIN'])) {
                 <td><?php echo $messages[$i]['Nom'];?></td>
                 <td><?php echo $messages[$i]['Email'];?></td>
                 <td><?php echo $messages[$i]['Sujet'];?></td>
-                <td><?php echo $messages[$i]['Message'];?></td>
+                <td><?php echo substr($messages[$i]['Message'], 0, 50) . "...";?></td>
                 <td><?php echo $messages[$i]['Date'];?></td>
                 <td><?php echo $messages[$i]['Statut'];?></td>
                 <td>

@@ -78,6 +78,11 @@ if(isset($_GET['id_page_precedent'])){
     $page_actuel=intval($_GET['id_page_precedent']);
 }
 
+//Mis à jour de la page actuelle après avoir appuyer les numeros de pages
+
+if (isset($_GET['page'])) {
+    $page_actuel = $_GET['page'];
+}
 
 //Mis à jour de la page actuelle après être allé à la page suivante
 

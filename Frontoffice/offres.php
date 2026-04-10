@@ -185,6 +185,9 @@ if (isset($_POST['mode_de_travail'])){
 
           <?php } ?>
 
+          <?php for ($i=0; $i < $nbDePages; $i++) { ?>
+            <a href="offres.php?page=<?php echo ($i+1) ?>"><?php echo ($i+1) ?></a>
+          <?php } ?>
 
           <!-- Bouton precedent de la pagination pour revenir la page precedente -->
 
