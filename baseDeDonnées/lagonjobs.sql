@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 28 mars 2026 à 07:36
+-- Généré le : mer. 15 avr. 2026 à 08:56
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -187,7 +187,7 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`Id`, `Nom`, `Prenom`, `Email`, `Mot_de_passe`, `Id_role`) VALUES
 (17, 'abdou', 'askalane', 'admin@gmail.com', '$2y$10$C2sx6RyfCnm524BrMzMbnekdwV2e.Tk4e3SZar9pM93BraL54L3BS', 2),
-(18, 'Fila', 'Djamel', 'defli@fi.com', '$2y$10$06b.NWTJgvbI5G/YrswqXuY.PFmlg8KqUxxUd9aQkh5qikDBFkhuO', 1);
+(19, 'user', 'user', 'user@gmail.com', '$2y$10$fZye30s0psPYXAXCCJH2Fu4rTKSAGZ4499prt07l.QnkNMHePQ0b6', 1);
 
 -- --------------------------------------------------------
 
@@ -364,7 +364,7 @@ ALTER TABLE `types_de_contrat`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `villes`
